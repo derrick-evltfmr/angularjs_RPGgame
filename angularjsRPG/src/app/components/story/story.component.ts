@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
 
 })
 
-export class StartComponent {
+export class StoryComponent {
 
 }
