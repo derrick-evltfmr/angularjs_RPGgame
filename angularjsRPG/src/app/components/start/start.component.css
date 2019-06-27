@@ -1,4 +1,14 @@
 .container-fluid {
   height: 100vh;
   background: rgba(255, 255, 255, 0.4);
+  padding-top: calc(50vh+60px);
 }
+
+    .container-fluid h1 {
+        font-size: 45px;
+        font-weight: bold;
+    }
+
+    .container-fluid a {
+        font-size: 25px;
+    }
