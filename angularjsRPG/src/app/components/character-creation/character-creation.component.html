@@ -1,5 +1,6 @@
 <div class="container-fluid">
 	<div class="row h-100">
+		<!--Left-->
 		<div class="col-3 sidebar p-3 text-center">
 			<h1>Races</h1>
 			<ul>
@@ -8,7 +9,23 @@
 				</li>
 			</ul>
 		</div>
-		<div class="col-6"></div>
+
+		<!--Mid-->
+		<div class="col-6 text-center p-3">
+			<h2>Race</h2>
+			<p>{{character.race}}</p>
+			<h2>Class</h2>
+			<p>{{character.class}}</p>
+			<h2>Gender</h2>
+			<div class="d-flex justify-content-center">
+				<div class="gender-button mr-1"></div>
+				<div class="gender-button mr-1"></div>
+			</div>
+			<h2>Name</h2>
+		</div>
+
+
+		<!--Right-->
 		<div class="col-3 sidebar p-3 text-center">
 			<h1>Classes</h1>
 			<ul>
