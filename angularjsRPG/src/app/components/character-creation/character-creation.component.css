@@ -1,0 +1,21 @@
+.container-fluid {
+	background: rgba(0, 0, 0, 0.5);
+	height: 100vh;
+}
+
+.sidebar {
+	background-color: #eda2d2
+}
+
+.sidebar {
+	cursor: pointer;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  color:white;
+  border-radius: 7px;
+}
+
+
+.sidebar li.active{
+  background: rgb(0,0,150);
+}
