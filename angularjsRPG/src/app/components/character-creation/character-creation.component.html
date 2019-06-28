@@ -18,8 +18,12 @@
 			<p>{{character.class}}</p>
 			<h2>Gender</h2>
 			<div class="d-flex justify-content-center">
-				<div class="gender-button mr-1"></div>
-				<div class="gender-button mr-1"></div>
+				<div class="gender-button mr-1" [class.active]="character.gender === 'Male'" (click)="changeGender('Male')">
+          <i class="fas fa-mars"></i>
+        </div>
+				<div class="gender-button mr-1" [class.active]="character.gender === 'Female'" (click)="changeGender('Female')">
+            <i class="fas fa-venus"></i>
+        </div>
 			</div>
 			<h2>Name</h2>
 		</div>
