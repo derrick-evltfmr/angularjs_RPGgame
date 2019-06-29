@@ -49,6 +49,37 @@ export const ExperienceToLevel = {				// How much experience we need to level up
 	7: 7000,
 	8: 8000,
 	9: 9000
-};												// variable usually comes with ;
+};												// variable comes with ;
 
 
+export class BaseCharacter {
+	name: string;
+	maxHealth: number;
+	currentHealth: number;
+	isIncapacitated: boolean;
+	barriers: {
+		attack: number,
+		sneak: number,
+		persuade: number
+	};
+	skills: {
+		attack: number,
+		sneak: number,
+		persuade: number,
+		intelligence: number
+	}
+
+	equippedWeapon: Weapon;
+	equippedArmor: Armor;
+
+	constructor(name: string, health: number, skills = {attack: 0, sneak: 0, persuade: 0, intelligence: 0}) {
+		this.name = name;
+		this.maxHealth = health;
+		this.currentHealth = health;
+		this.skills = skills;
+		this.isIncapacitated = false;
+
+
+	}
+
+}
