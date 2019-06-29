@@ -22,4 +22,38 @@ export class CharacterCreationComponent{
 	classes = CharacterOptions.classes;
 	genders = CharacterOptions.genders;
 
+
+	changeRace(race: string) {
+		this.character.race = race;
+		this.checkCompleted();
+	}
+
+	changeClass(someClass: string) {		// class is reserved word so we can't use that
+		this.character.class = someClass;
+		this.checkCompleted();
+	}
+
+	changeGender(gender: string) {
+		this.character.gender = gender;
+		this.checkCompleted();
+	}
+
+	changeName() {
+		this.checkCompleted();
+	}
+
+	checkCompleted(){
+		this.characterComplete = this.character.race !== "--Choose--"	// if these conditions are all True(1), then 1, because of logical and
+			&& this.character.class !== "--Choose--"
+			&& this.character.gender !== undefined
+			&& this.character.name										// this equals to true, not undefined(false value)
+	}
+
+	createCharacter() {
+		if (!this.characterComplete) {
+			return;
+		}
+
+		console.log(this.character);
+	}
 }

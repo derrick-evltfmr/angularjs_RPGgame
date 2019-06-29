@@ -7,6 +7,12 @@
 	background-color: rgba(0, 0, 0, 0.5)
 }
 
+.sidebar ul {
+	list-style: none;
+	text-indent: 0;
+	padding: 0;
+}
+
 .sidebar li {
 	cursor: pointer;
   display: block;
