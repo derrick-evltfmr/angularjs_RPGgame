@@ -71,6 +71,7 @@ export class BaseCharacter {
 
 	equippedWeapon: Weapon;
 	equippedArmor: Armor;
+	spriteUrl: string;							// url to the image we specify the character
 
 	constructor(name: string, health: number, skills = {attack: 0, sneak: 0, persuade: 0, intelligence: 0}) {
 		this.name = name;
@@ -102,5 +103,23 @@ export class BaseCharacter {
 		// so it can reflect the weapon min/max damage difference, but still keep the damage stable
 		// e.g. even if the random number is 0, it will still at least casue minDamage + 0
 
+	}
+}
+
+
+export class Monster extends BaseCharacter {
+	isTrapped: boolean = false;				// default to false
+	poisonStacks: number = 0;
+	isStrongPoison: boolean = false;
+	hasTakenPoisonDamageThisTurn: boolean = false;
+
+	// the parameters are what we want to pass in the constructor
+	constructor(name, health, skills, barriers: {attack: number, sneak: number, persuade: number}, minDamage, maxDamage, spriteUrl) {
+		super(name, health, skills);
+
+		this.barriers = barriers;
+		this.equippedWeapon = new Weapon (undefined, minDamage, maxDamage);
+
+		this.spriteUrl = spriteUrl;
 	}
 }
