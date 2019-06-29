@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CharacterOptions } from '../../models/character-options';
 
 @Component({
   selector: "character-creation-component",
@@ -7,15 +8,18 @@ import { Component } from '@angular/core';
 })
 
 export class CharacterCreationComponent{
-  character = {                         // set up some properties for character
-    race: '--Choose--',                 // set the default to some string
-    class: '--Choose--',
-    gender: undefined,                  // it's ok to set undefined because they are button
-    name: undefined                      // not displaying anything
-  }
+	character = {                           // set up some properties for character
+		race: '--Choose--',                 // set the default to some string
+		class: '--Choose--',
+		gender: undefined,                  // it's ok to set undefined because they are button
+		name: undefined                     // not displaying anything
+	}
 
-  characterComplete:boolean = false     // set a characterComplete flag
-                                        // typescript boolean
+	characterComplete: boolean = false;     // set a characterComplete flag
+											// typescript boolean
 
+	races = CharacterOptions.races;
+	classes = CharacterOptions.classes;
+	genders = CharacterOptions.genders;
 
 }
