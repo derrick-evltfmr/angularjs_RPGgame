@@ -26,7 +26,7 @@
         </div>
 			</div>
       <h2>Name</h2>
-      <input type="text" placeholder="Name" class="mb-5 px-2" [(ngModel)]="character.name" (input)="changeName()" />
+      <input type="text" placeholder="Name" class="mb-5 px-2" [(ngModel)]="character.name" (input)="changeName()" /><br/>
       <button class="btn continue-button px-5 py-2 mx-auto" [class.disabled]="!characterComplete" (click)="createCharacter()">Create Character</button>
     </div>
 

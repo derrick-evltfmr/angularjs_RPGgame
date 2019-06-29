@@ -4,18 +4,47 @@
 }
 
 .sidebar {
-	background-color: #eda2d2
+	background-color: rgba(0, 0, 0, 0.5)
 }
 
-.sidebar {
+.sidebar li {
 	cursor: pointer;
   display: block;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #ceae7e;
   color:white;
   border-radius: 7px;
 }
 
 
 .sidebar li.active{
-  background: rgb(0,0,150);
+  background: rgb(228, 217, 121);
+}
+
+.gender-button {
+  cursor: pointer;
+  display: block;
+  background-color: rgb(219, 188, 129);
+  border-radius: 7px;
+  width: 50px;
+  font-size: 30px;
+}
+
+.gender-button.active {
+    background: rgb(228, 217, 121);
+}
+
+.continue-button {
+  display: block;
+  cursor: pointer;
+  color: white;
+  background: rgb(228, 217, 121);
+  border: none;
+  border-radius: 7px;
+  font-weight:bolder;
+  font-size: 25px;
+}
+
+.continue-button.disabled {
+  background: black;
+  cursor: auto;
 }
