@@ -147,6 +147,22 @@ export class Hero extends BaseCharacter {
 		this.equipNewArmor(armor);
 	}
 
+	levelUp(): void {
+		this.experience -= ExperienceToLevel(this.level);
+		this.level++;
+		this.availableSkillPoints += 2;
+		if(this.experience >= ExperienceToLevel(this.level)){
+			this.levelUp();
+		}
+	}
+
+	equipNewArmor(armor: Armor): void {
+
+	}
+
+	equipNewWeapon(weapon: Weapon): void {
+
+	}
 
 
 }
