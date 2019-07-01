@@ -123,3 +123,30 @@ export class Monster extends BaseCharacter {
 		this.spriteUrl = spriteUrl;
 	}
 }
+
+
+export class Hero extends BaseCharacter {
+	gender: string;
+	race: string;
+	characterRole: string;
+	experience: number;
+	level: number;
+	availableSkillPoints: number;
+	hasTrapDefence: boolean;
+	hasDamagingTrap: boolean;
+	turnsUntilSpecialAvailableAgain: number;
+
+	constructor(name, gender, race, level, health, skills, weapon, armor){
+		super(name, health, skills);
+
+		this.gender = gender;
+		this.race = race;
+		this.experience = 0;
+		this.level = level;
+		this.equippedWeapon = weapon;
+		this.equipNewArmor(armor);
+	}
+
+
+
+}
