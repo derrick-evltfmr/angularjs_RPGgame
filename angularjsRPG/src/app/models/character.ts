@@ -157,11 +157,21 @@ export class Hero extends BaseCharacter {
 	}
 
 	equipNewArmor(armor: Armor): void {
-
+		if(this.equippedArmor){
+			this.barriers.attack -= this.equippedArmor.attackBarrierBonus;
+		}
+		this.equippedArmor = armor;
+		this.barriers.attack += armor.attackBarrierBonus;
 	}
 
 	equipNewWeapon(weapon: Weapon): void {
+		this.equippedWeapon = weapon;
+	}
 
+	rest(): void {
+		this.currentHealth = this.maxHealth;
+		this.isIncapacitated = false;
+		this.turnsUntilSpecialAvailableAgain = 0;
 	}
 
 
