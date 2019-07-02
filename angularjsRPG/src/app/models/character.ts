@@ -176,3 +176,34 @@ export class Hero extends BaseCharacter {
 
 
 }
+
+export class Warrior extends Hero {
+	constructor(name, gender, race, level, health, skills, weapon, armor){
+		super(name, gender, race, level, health, skills, weapon, armor);
+
+		this.characterRole = ClassOptions.warrior;
+		this.skills.attack += 2;
+		this.skills.persuade++;
+		this.skills.sneak--;
+		this.skills.intelligence--;
+		this.spriteUrl = this.gender === GenderOptions.male ? "./assets/" : "./assets/" ;
+	}
+}
+
+export class Ranger extends Hero {
+	constructor(name, gender, race, level, health, skills, weapon, armor){
+		super(name, gender, race, level, health, skills, weapon, armor);
+	}
+}
+
+export class Rogue extends Hero {
+	constructor(name, gender, race, level, health, skills, weapon, armor){
+		super(name, gender, race, level, health, skills, weapon, armor);
+	}
+}
+
+export class Priest extends Hero {
+	constructor(name, gender, race, level, health, skills, weapon, armor){
+		super(name, gender, race, level, health, skills, weapon, armor);
+	}
+}
