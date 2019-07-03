@@ -203,16 +203,16 @@ export class Ranger extends Hero {
 		super(name, gender, race, level, health, skills, weapon, armor);
 
 		this.characterRole = ClassOptions.ranger;
-		this.skills.attack
-		this.skills.persuade
-		this.skills.sneak
-		this.skills.intelligence
+		this.skills.attack--;
+		this.skills.persuade--;
+		this.skills.sneak += 2;
+		this.skills.intelligence++;
 		this.spriteUrl = this.gender === GenderOptions.male ? "./assets/Male_Ranger.png" : "./assets/Female_Ranger.png";
 	}
 
 	levelUp(): void {
-		this.maxHealth =
-		this.currentHealth =
+		this.maxHealth = Math.floor(Math.random() * 8) + 1;
+		this.currentHealth = this.maxHealth;
 		super.levelUp();
 	}
 }
@@ -222,16 +222,16 @@ export class Rogue extends Hero {
 		super(name, gender, race, level, health, skills, weapon, armor);
 
 		this.characterRole = ClassOptions.rogue;
-		this.skills.attack
-		this.skills.persuade
-		this.skills.sneak
-		this.skills.intelligence
+		this.skills.attack++;
+		this.skills.persuade--;
+		this.skills.sneak += 2;
+		this.skills.intelligence--;
 		this.spriteUrl = this.gender === GenderOptions.male ? "./assets/Male_Rogue.png" : "./assets/Female_Rogue.png";
 	}
 
 	levelUp(): void {
-		this.maxHealth =
-		this.currentHealth =
+		this.maxHealth = Math.floor(Math.random() * 8) + 1;
+		this.currentHealth = this.maxHealth;
 		super.levelUp();
 	}
 }
@@ -241,16 +241,16 @@ export class Priest extends Hero {
 		super(name, gender, race, level, health, skills, weapon, armor);
 
 		this.characterRole = ClassOptions.priest;
-		this.skills.attack
-		this.skills.persuade
-		this.skills.sneak
-		this.skills.intelligence
+		this.skills.attack--;
+		this.skills.persuade++;
+		this.skills.sneak--;
+		this.skills.intelligence += 2;
 		this.spriteUrl = this.gender === GenderOptions.male ? "./assets/Male_Priest.png" : "./assets/Female_Priest.png";
 	}
 
 	levelUp(): void {
-		this.maxHealth =
-		this.currentHealth =
+		this.maxHealth = Math.floor(Math.random() * 6) + 1;
+		this.currentHealth = this.maxHealth;
 		super.levelUp();
 	}
 }
