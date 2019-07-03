@@ -2,18 +2,18 @@
 	<div class="row h-100">
 		<!--Left-->
 		<div class="col-3 sidebar p-3 text-center">
-			<h1>Races</h1>
+			<h1>Camps</h1>
 			<ul>
-				<li *ngFor="let race of races" (click)="changeRace(race)" [class.active]="character.race === race" class="mb-3 py-2">
-					{{race}}
+				<li *ngFor="let camp of camps" (click)="changecamp(camp)" [class.active]="character.camp === camp" class="mb-3 py-2">
+					{{camp}}
 				</li>
 			</ul>
 		</div>
 
 		<!--Mid-->
 		<div class="col-6 text-center p-3">
-			<h2>Race</h2>
-			<p>{{character.race}}</p>
+			<h2>Camp</h2>
+			<p>{{character.camp}}</p>
 			<h2>Class</h2>
 			<p>{{character.class}}</p>
 			<h2>Gender</h2>
