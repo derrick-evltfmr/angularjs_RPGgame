@@ -186,24 +186,71 @@ export class Warrior extends Hero {
 		this.skills.persuade++;
 		this.skills.sneak--;
 		this.skills.intelligence--;
-		this.spriteUrl = this.gender === GenderOptions.male ? "./assets/" : "./assets/" ;
+		this.spriteUrl = this.gender === GenderOptions.male ? "./assets/Male_Warrior.png" : "./assets/Female_Warrior.png";
+										// if male is true, first option, otherwise, second option
+	}
+
+	// override the levelUp()
+	levelUp(): void {
+		this.maxHealth = Math.floor(Math.random() * 10) + 1;	// increase 1~10 to health
+		this.currentHealth = this.maxHealth;					// reset their health
+		super.levelUp();										// go through the experience and level counter
 	}
 }
 
 export class Ranger extends Hero {
 	constructor(name, gender, race, level, health, skills, weapon, armor){
 		super(name, gender, race, level, health, skills, weapon, armor);
+
+		this.characterRole = ClassOptions.ranger;
+		this.skills.attack
+		this.skills.persuade
+		this.skills.sneak
+		this.skills.intelligence
+		this.spriteUrl = this.gender === GenderOptions.male ? "./assets/Male_Ranger.png" : "./assets/Female_Ranger.png";
+	}
+
+	levelUp(): void {
+		this.maxHealth =
+		this.currentHealth =
+		super.levelUp();
 	}
 }
 
 export class Rogue extends Hero {
 	constructor(name, gender, race, level, health, skills, weapon, armor){
 		super(name, gender, race, level, health, skills, weapon, armor);
+
+		this.characterRole = ClassOptions.rogue;
+		this.skills.attack
+		this.skills.persuade
+		this.skills.sneak
+		this.skills.intelligence
+		this.spriteUrl = this.gender === GenderOptions.male ? "./assets/Male_Rogue.png" : "./assets/Female_Rogue.png";
+	}
+
+	levelUp(): void {
+		this.maxHealth =
+		this.currentHealth =
+		super.levelUp();
 	}
 }
 
 export class Priest extends Hero {
 	constructor(name, gender, race, level, health, skills, weapon, armor){
 		super(name, gender, race, level, health, skills, weapon, armor);
+
+		this.characterRole = ClassOptions.priest;
+		this.skills.attack
+		this.skills.persuade
+		this.skills.sneak
+		this.skills.intelligence
+		this.spriteUrl = this.gender === GenderOptions.male ? "./assets/Male_Priest.png" : "./assets/Female_Priest.png";
+	}
+
+	levelUp(): void {
+		this.maxHealth =
+		this.currentHealth =
+		super.levelUp();
 	}
 }
