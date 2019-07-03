@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Hero, Weapon, Armor, Monster, Warrior, Ranger, Rogue, Priest } from '../models/character';
-import { Chapter } from '../models/chapter';
+import { Chapter, SuccessOptions } from '../models/chapter';
 import { Chapter1 } from '../chapters/Chapter1';
 import { CampOptions, GenderOptions, ClassOptions } from '../models/character-options';
 
@@ -47,6 +47,20 @@ export class GameControllerService {
 		this.router.navigateByUrl('/story');
 	}
 
+	encounterSuccess(): string[] {
+		let messages: string[] = [];
+		this.currentChapter.ifSucceed.forEach(reward => {
+			switch(reward){
+				case SuccessOptions.rewardExperience:
+					break;
+				case SuccessOptions.rewardEquipment:
+					break;
+				case SuccessOptions.addHeroToParty:
+					break;
+			}
+		});
+		return messages;
 
+	}
 
 }
