@@ -1,4 +1,4 @@
-import { RaceOptions, ClassOptions, GenderOptions } from './character-options';
+import { CampOptions, ClassOptions, GenderOptions } from './character-options';
 
 export class Armor {
 	constructor(name: string, attackBarrierBonus: number) {
@@ -127,7 +127,7 @@ export class Monster extends BaseCharacter {
 
 export class Hero extends BaseCharacter {
 	gender: string;
-	race: string;
+	camp: string;
 	characterRole: string;
 	experience: number;
 	level: number;
@@ -136,11 +136,11 @@ export class Hero extends BaseCharacter {
 	hasDamagingTrap: boolean;
 	turnsUntilSpecialAvailableAgain: number;
 
-	constructor(name, gender, race, level, health, skills, weapon, armor){
+	constructor(name, gender, camp, level, health, skills, weapon, armor){
 		super(name, health, skills);
 
 		this.gender = gender;
-		this.race = race;
+		this.camp = camp;
 		this.experience = 0;
 		this.level = level;
 		this.equippedWeapon = weapon;
@@ -148,10 +148,10 @@ export class Hero extends BaseCharacter {
 	}
 
 	levelUp(): void {
-		this.experience -= ExperienceToLevel(this.level);
+		this.experience -= ExperienceToLevel[this.level];	// index, so [] not ()
 		this.level++;
 		this.availableSkillPoints += 2;
-		if(this.experience >= ExperienceToLevel(this.level)){
+		if(this.experience >= ExperienceToLevel[this.level]) {
 			this.levelUp();
 		}
 	}
@@ -178,8 +178,8 @@ export class Hero extends BaseCharacter {
 }
 
 export class Warrior extends Hero {
-	constructor(name, gender, race, level, health, skills, weapon, armor){
-		super(name, gender, race, level, health, skills, weapon, armor);
+	constructor(name, gender, camp, level, health, skills, weapon, armor){
+		super(name, gender, camp, level, health, skills, weapon, armor);
 
 		this.characterRole = ClassOptions.warrior;
 		this.skills.attack += 2;
@@ -199,8 +199,8 @@ export class Warrior extends Hero {
 }
 
 export class Ranger extends Hero {
-	constructor(name, gender, race, level, health, skills, weapon, armor){
-		super(name, gender, race, level, health, skills, weapon, armor);
+	constructor(name, gender, camp, level, health, skills, weapon, armor){
+		super(name, gender, camp, level, health, skills, weapon, armor);
 
 		this.characterRole = ClassOptions.ranger;
 		this.skills.attack--;
@@ -218,8 +218,8 @@ export class Ranger extends Hero {
 }
 
 export class Rogue extends Hero {
-	constructor(name, gender, race, level, health, skills, weapon, armor){
-		super(name, gender, race, level, health, skills, weapon, armor);
+	constructor(name, gender, camp, level, health, skills, weapon, armor){
+		super(name, gender, camp, level, health, skills, weapon, armor);
 
 		this.characterRole = ClassOptions.rogue;
 		this.skills.attack++;
@@ -237,8 +237,8 @@ export class Rogue extends Hero {
 }
 
 export class Priest extends Hero {
-	constructor(name, gender, race, level, health, skills, weapon, armor){
-		super(name, gender, race, level, health, skills, weapon, armor);
+	constructor(name, gender, camp, level, health, skills, weapon, armor){
+		super(name, gender, camp, level, health, skills, weapon, armor);
 
 		this.characterRole = ClassOptions.priest;
 		this.skills.attack--;
@@ -254,3 +254,6 @@ export class Priest extends Hero {
 		super.levelUp();
 	}
 }
+
+
+
