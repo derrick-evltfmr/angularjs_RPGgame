@@ -40,5 +40,13 @@ export class GameControllerService {
 					{attack: 0, sneak: 0, persuade: 0, intelligence:0}, new Weapon("Wooden Wand", 1, 3), new Armor("Basic Clothes",0));
 				break;
 		}
+
+		// Keep in mind that in JavaScript, the objects are passed by reference, while other variable are passed by value
+		checkCamp(this.mainCharacter);
+		this.heroParty.push(this.mainCharacter);
+		this.router.navigateByUrl('/story');
 	}
+
+
+
 }
