@@ -19,5 +19,16 @@ export enum SuccessOptions {
 }
 
 export class Chapter {
-
+	story: string[];
+	options: CharacterAction[];
+	enemyParty: Monster[];
+	sneakPersuadeFail: CharacterAction;
+	ifFail: FailureOptions;
+	ifSucceed: SuccessOptions;
+	rewards: {
+		experience: number,
+		equipment: (Weapon | Armor) [],		// array of Weapon or Armor
+		newHero: Hero;
+	};
+	nextChapter: Chapter;
 }
