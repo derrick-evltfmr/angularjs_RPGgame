@@ -21,5 +21,24 @@ export class GameControllerService {
 
 	enemyParty: Monster[] = [];
 
+	setMainCharacter(character: {name: string, class: ClassOptions, camp: CampOptions, gender: GenderOptions}) {
+		switch(character.class) {
+			case ClassOptions.warrior:
+				this.mainCharacter = new Warrior(character.name, character.gender, character.camp, 1, 10,
+					{attack: 0, sneak: 0, persuade: 0, intelligence:0}, new Weapon("Wooden Sword", 1, 3), new Armor("Basic Clothes",0));
+				break;
+			case ClassOptions.ranger:
+				this.mainCharacter = new Ranger(character.name, character.gender, character.camp, 1, 10,
+					{attack: 0, sneak: 0, persuade: 0, intelligence:0}, new Weapon("Wooden Bow", 1, 3), new Armor("Basic Clothes",0));
+				break;
+			case ClassOptions.rogue:
+				this.mainCharacter = new Rogue(character.name, character.gender, character.camp, 1, 10,
+					{attack: 0, sneak: 0, persuade: 0, intelligence:0}, new Weapon("Wooden Dagger", 1, 3), new Armor("Basic Clothes",0));
+				break;
+			case ClassOptions.priest:
+				this.mainCharacter = new Priest(character.name, character.gender, character.camp, 1, 10,
+					{attack: 0, sneak: 0, persuade: 0, intelligence:0}, new Weapon("Wooden Wand", 1, 3), new Armor("Basic Clothes",0));
+				break;
+		}
 	}
 }
