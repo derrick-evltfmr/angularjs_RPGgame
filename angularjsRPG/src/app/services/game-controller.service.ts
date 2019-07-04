@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Hero, Weapon, Armor, Monster, Warrior, Ranger, Rogue, Priest } from '../models/character';
+import { Hero, Weapon, Armor, Monster, Warrior, Ranger, Rogue, Priest, checkCamp } from '../models/character';
 import { Chapter, SuccessOptions } from '../models/chapter';
 import { Chapter1 } from '../chapters/Chapter1';
 import { CampOptions, GenderOptions, ClassOptions } from '../models/character-options';
@@ -62,5 +62,4 @@ export class GameControllerService {
 		return messages;
 
 	}
-
 }
