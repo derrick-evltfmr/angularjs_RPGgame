@@ -1,6 +1,27 @@
-<div class = "story-component-page">
-	<div class = "container body-content py-5 h-75"> <!--height 75%-->
-
+<div class="story-component-page">
+	<div class="container body-content py-5 h-75"> <!--height 75%-->
+		<div class="h-100 story-container p-3">
+			<!-- display each sentence within our story -->
+			<p class="text-white col-12" *ngFor="let paragraph of currentChapter.story">
+				{{paragraph}}
+			</p>
+			<div class="m-3">
+				<button *ngFor="let option of currentChapter.options" class="btn encounter-option mr-3" (click)="chooseAction(option)">
+					{{option}}
+				</button>
+			</div>
+			<p class="text-white col-12">
+				{{displayMessage}}
+			</p>
+			<p class="text-white col-12" *ngFor="let message of successMessages">
+				{{message}}
+			</p>
+			<div class="m-3" *ngIf="showNextChapterButton">
+				<button class="btn encounter-option mr-3" (click)="nextChapter()">
+					Next Chapter
+				</button>
+			</div>
+		</div>
 	</div>
 	<div class = "container-fluid h-25">
 
