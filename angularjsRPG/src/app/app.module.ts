@@ -13,6 +13,7 @@ import { CharacterCreationComponent } from './components/character-creation/char
 import { StoryComponent } from './components/story/story.component';
 import { InventoryComponent } from './components/inventory/inventory.component';
 import { FightComponent } from './components/fight/fight.component';
+import { GameControllerService } from './services/game-controller.service';
 
 // Set up the routes
 const routes: Routes = [  // create an array of Routes objects
@@ -42,7 +43,9 @@ const routes: Routes = [  // create an array of Routes objects
 								 // so it will know what to use for the paths in the application
 	FormsModule
   ],
-  providers: [],
+  providers: [
+	  GameControllerService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

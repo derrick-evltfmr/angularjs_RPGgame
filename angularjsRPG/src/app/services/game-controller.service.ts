@@ -21,7 +21,7 @@ export class GameControllerService {
 
 	enemyParty: Monster[] = [];
 
-	setMainCharacter(character: {name: string, class: ClassOptions, camp: CampOptions, gender: GenderOptions}) {
+	setMainCharacter(character) {
 		switch (character.class) {
 			case ClassOptions.warrior:
 				this.mainCharacter = new Warrior(character.name, character.gender, character.camp, 1, 10,
