@@ -102,6 +102,8 @@ export class GameControllerService {
 		this.partyInventory = [];
 		this.availableHeroes = [];
 		this.enemyParty = this.currentChapter.enemyParty;
+
+		this.router.navigateByUrl("/");
 	}
 
 }
