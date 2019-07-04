@@ -88,4 +88,20 @@ export class GameControllerService {
 		return messages;
 
 	}
+
+	nextChapter(): void {
+		this.heroParty.forEach(hero => hero.rest());
+		this.currentChapter = this.currentChapter.nextChapter;
+		this.enemyParty = this.currentChapter.enemyParty;
+	}
+
+	gameOver(): void {
+		this.mainCharacter = undefined;
+		this.currentChapter = Chapter1;
+		this.heroParty = [];
+		this.partyInventory = [];
+		this.availableHeroes = [];
+		this.enemyParty = this.currentChapter.enemyParty;
+	}
+
 }
