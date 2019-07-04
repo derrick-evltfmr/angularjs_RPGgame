@@ -1,0 +1,19 @@
+.story-component-page {
+	height: 100vh;
+}
+
+.story-container {
+	background-color: rgba(0,0,0,0.5);
+	border: 3px solid #d2b48c;
+	border-radius: 7px;
+	overflow-y: auto;
+}
+
+.encounter-option:hover {
+	cursor: pointer;
+}
+
+.options-bar {
+	background-color: #d2b48c;
+	border-top: 2px solid dargreen;
+}
