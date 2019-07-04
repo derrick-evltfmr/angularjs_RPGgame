@@ -48,6 +48,7 @@
         ]
       }
     ],
+    "prefer-const": [false, {"destructuring": "all"}],
     "no-consecutive-blank-lines": false,
     "no-console": [
       true,
