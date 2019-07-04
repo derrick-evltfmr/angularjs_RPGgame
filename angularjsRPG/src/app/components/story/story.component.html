@@ -17,13 +17,15 @@
 				{{message}}
 			</p>
 			<div class="m-3" *ngIf="showNextChapterButton">
-				<button class="btn encounter-option mr-3" (click)="nextChapter()">
+				<button class="btn encounter-options" (click)="nextChapter()">
 					Next Chapter
 				</button>
 			</div>
 		</div>
 	</div>
 	<div class = "container-fluid h-25">
-
+		<div class="row h-100 options-bar justify-content-center">
+			<inventory-component></inventory-component>
+		</div>
 	</div>
 </div>
