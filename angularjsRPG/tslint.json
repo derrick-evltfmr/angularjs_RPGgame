@@ -1,6 +1,7 @@
 {
   "extends": "tslint:recommended",
   "rules": {
+    "align": [false, "parameters"],
     "array-type": false,
     "arrow-parens": false,
     "deprecation": {
@@ -60,7 +61,7 @@
     ],
     "no-empty": false,
     "no-inferrable-types": [
-      true,
+      false,
       "ignore-params"
     ],
     "no-non-null-assertion": true,
@@ -92,6 +93,7 @@
     "use-lifecycle-interface": true,
     "use-pipe-transform-interface": true
   },
+    
   "rulesDirectory": [
     "codelyzer"
   ]

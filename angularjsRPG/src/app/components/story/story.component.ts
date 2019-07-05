@@ -11,5 +11,17 @@ import { Router } from '@angular/router';
 })
 
 export class StoryComponent {
+	constructor(private gameControllerService: GameControllerService,
+		private router: Router) {}
 
+	// make the variables available in story.component.html because it reads from this component
+	currentChapter = this.gameControllerService.currentChapter;
+	heroParty: Hero[] = this.gameControllerService.heroParty;
+	enemyParty: Monster[] = this.currentChapter.enemyParty;
+
+	actionDelay: number = this.gameControllerService.actionDelay;
+	displayMessage: string = "";
+	successMessages: string[] = [];
+	showNextChapterButton: boolean = false;
 }
+
