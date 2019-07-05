@@ -106,5 +106,37 @@ export class StoryComponent {
 		}, this.actionDelay);
 	}
 
+	onSuccess(): void {
+		this.successMessages = this.gameControllerService.encounterSuccess();
+		this.showNextChapterButton = true;
+	}
+
+	onSneakPersuadeFailure(): void {
+		switch(this.currentChapter.sneakPersuadeFail) {
+			case CharacterAction.attack:
+			default:
+				this.displayMessage = `The enemy attacks you.`;
+				setTimeout(() => {
+					this.tryAttack();
+				}, this.actionDelay);
+				break;
+			case CharacterAction.doNothing:
+				this.displayMessage = `Your failure spoiled the opportunity and your party moves on.`;
+				setTimeout(() => {
+					this.nextChapter();
+				}, this.actionDelay);
+		}
+	}
+
+	nextChapter(): void {
+		this.gameControllerService.nextChapter();
+		this.currentChapter = this.gameControllerService.currentChapter;
+		this.heroParty = this.gameControllerService.heroParty;
+		this.enemyParty = this.currentChapter.enemyParty;
+		// reset
+		this.displayMessage = "";
+		this.successMessages = [];
+		this.showNextChapterButton = false;
+	}
 }
 
