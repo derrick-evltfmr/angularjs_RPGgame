@@ -23,5 +23,31 @@ export class StoryComponent {
 	displayMessage: string = "";
 	successMessages: string[] = [];
 	showNextChapterButton: boolean = false;
+
+	chooseAction(action: string): void {
+		if (this.successMessages.length){
+			return;
+		}
+
+		this.displayMessage = `You decide to ${action}.`;
+		setTimeout(() => {			  	// just like console.log(), available everywhere in js
+			switch(action) {			// 1st parameter is a function and the 2nd parameter
+				case CharacterAction.attack:	// is a number of milliseconds of the delay
+					this.tryAttack();			// this arrow function is useful in this case
+					break;						// () => {}, it will not go out of the function
+				case CharacterAction.sneak:		// but it's created inside the class, so it will
+					this.trySneak();			// hold onto that value, so to keep our value
+					break;						// consistent
+				case CharacterAction.persuade:
+					this.tryPersuade();
+					break;
+				case CharacterAction.doNothing:
+					this.doNothing();
+					break;
+				default:
+					console.log("Something went horribly wrong in story >> chooseAction");
+			}
+		}, this.actionDelay);
+	}
 }
 
