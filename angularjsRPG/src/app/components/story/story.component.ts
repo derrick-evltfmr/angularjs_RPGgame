@@ -76,5 +76,35 @@ export class StoryComponent {
 			}, this.actionDelay);
 		}
 	}
+
+	tryPersuade(): void {
+		let persuasionBarrier = 0;
+		let persuasionPower = 0;
+		this.enemyParty.forEach( enemy => {
+			persuasionBarrier += enemy.barriers.persuade;
+		});
+		this.heroParty.forEach( hero => {
+			persuasionPower += hero.persuade();
+		});
+		if (persuasionPower >= persuasionBarrier) {
+			this.displayMessage = `Your attempt at persuasion was a success!`;
+			setTimeout(() => {
+				this.onSuccess();
+			}, this.actionDelay);
+		} else {
+			this.displayMessage = `Your attempt at persuasion was a failure!`;
+			setTimeout(() => {
+				this.onSneakPersuadeFailure();
+			}, this.actionDelay);
+		}
+	}
+
+	doNothing(): void {
+		this.displayMessage = `You decide to do nothing and move on.`;
+		setTimeout(() => {
+			this.nextChapter();
+		}, this.actionDelay);
+	}
+
 }
 
