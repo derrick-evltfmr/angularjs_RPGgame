@@ -49,5 +49,32 @@ export class StoryComponent {
 			}
 		}, this.actionDelay);
 	}
+
+	tryAttack(): void {
+		this.gameControllerService.isFighting = true;
+		this.router.navigateByUrl("/fight");	// route to the fight page
+	}
+
+	trySneak(): void {
+		let sneakBarrier = 0;
+		let sneakPower = 0;
+		this.enemyParty.forEach( enemy => {
+			sneakBarrier += enemy.barriers.sneak;
+		});
+		this.heroParty.forEach( hero => {
+			sneakPower += hero.sneak();
+		});
+		if (sneakPower >= sneakBarrier) {
+			this.displayMessage = `Your attempt at sneaking was a success!`;
+			setTimeout(() => {
+				this.onSuccess();
+			}, this.actionDelay);
+		} else {
+			this.displayMessage = `Your attempt at sneaking was a failure!`;
+			setTimeout(() => {
+				this.onSneakPersuadeFailure();
+			}, this.actionDelay);
+		}
+	}
 }
 
