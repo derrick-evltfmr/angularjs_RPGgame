@@ -1,44 +1,21 @@
-<div class="container-fluid">
-	<div class="row h-100">
-		<!--Left-->
-		<div class="col-3 sidebar p-3 text-center">
-			<h1>Camps</h1>
-			<ul>
-				<li *ngFor="let camp of camps" (click)="changecamp(camp)" [class.active]="character.camp === camp" class="mb-3 py-2">
-					{{camp}}
-				</li>
-			</ul>
-		</div>
-
-		<!--Mid-->
-		<div class="col-6 text-center p-3">
-			<h2>Camp</h2>
-			<p>{{character.camp}}</p>
-			<h2>Class</h2>
-			<p>{{character.class}}</p>
-			<h2>Gender</h2>
-			<div class="d-flex justify-content-center">
-				<div class="gender-button mr-1" [class.active]="character.gender === 'Male'" (click)="changeGender('Male')">
-          <i class="fas fa-mars"></i>
-        </div>
-				<div class="gender-button mr-1" [class.active]="character.gender === 'Female'" (click)="changeGender('Female')">
-            <i class="fas fa-venus"></i>
-        </div>
-			</div>
-      <h2>Name</h2>
-      <input type="text" placeholder="Name" class="mb-5 px-2" [(ngModel)]="character.name" (input)="changeName()" /><br/>
-      <button class="btn continue-button px-5 py-2 mx-auto" [class.disabled]="!characterComplete" (click)="createCharacter()">Create Character</button>
-    </div>
-
-
-		<!--Right-->
-		<div class="col-3 sidebar p-3 text-center">
-			<h1>Classes</h1>
-			<ul>
-				<li *ngFor="let class of classes" (click)="changeClass(class)" [class.active]="character.class === class" class="mb-3 py-2">
-					{{class}}
-				</li>
-			</ul>
-		</div>
-	</div>
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
+<h2>Here are some links to help you start: </h2>
+<ul>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>

@@ -26,21 +26,21 @@ const routes: Routes = [  // create an array of Routes objects
 
 @NgModule({
   declarations: [
-	AppComponent,
-	// Declare the components here so that we can use them later in our code
-	// This is to tell Angular the components exist
-	StartComponent,
-	CharacterCreationComponent,
-	StoryComponent,
-	InventoryComponent,
-	FightComponent
+    AppComponent,
+    // Declare the components here so that we can use them later in our code
+    // This is to tell Angular the components exist
+    StartComponent,
+    CharacterCreationComponent,
+    StoryComponent,
+    InventoryComponent,
+    FightComponent
   ],
   imports: [
-	BrowserModule,
-	AppRoutingModule,
-	RouterModule.forRoot(routes),// This creates our router with all of the routes that we've created
-								 // so it will know what to use for the paths in the application
-	FormsModule
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule.forRoot(routes),// This creates our router with all of the routes that we've created
+                                 // so it will know what to use for the paths in the application
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
