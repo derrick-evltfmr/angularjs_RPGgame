@@ -255,5 +255,28 @@ export class Priest extends Hero {
 	}
 }
 
-
+export const checkCamp =(hero: Hero) => {
+	switch(hero.camp){
+		case CampOptions.strengthCountry:
+			hero.skills.attack += 2;
+			hero.skills.persuade++;
+			hero.skills.intelligence -= 2;
+			break;
+		case CampOptions.agileCountry:
+			hero.skills.attack ++;
+			hero.skills.sneak += 2;
+			hero.skills.persuade -= 2;
+			break;
+		case CampOptions.wisdomCountry:
+			hero.skills.intelligence += 2;
+			hero.skills.sneak++;
+			hero.skills.persuade -= 2;
+			break;
+		case CampOptions.dexterityCountry:
+			hero.skills.persuade += 2;
+			hero.skills.intelligence++;
+			hero.skills.attack -= 2;
+			break;
+	}
+}
 
