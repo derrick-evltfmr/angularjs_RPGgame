@@ -1,4 +1,4 @@
-import { Hero, Monster, Weapon, Armor } from './character';		// character.ts
+import { Hero, Monster, Weapon, Armor } from './characters';		// character.ts
 
 export enum CharacterAction {
 	attack = "Attack",

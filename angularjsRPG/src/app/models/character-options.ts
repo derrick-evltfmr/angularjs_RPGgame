@@ -1,8 +1,8 @@
-export enum CampOptions {
-	strengthCountry = "Strength Country",
-	agileCountry = "Agile Country",
-	wisdomCountry = "Wisdom Country",
-	dexterityCountry = "Dexterity Country"
+export enum RaceOptions {
+  human = "Human",
+  dwarf = "Dwarf",
+  elf = "Elf",
+  halfling = "Halfling"
 }
 
 export enum ClassOptions {
@@ -18,11 +18,11 @@ export enum GenderOptions {
 }
 
 export const CharacterOptions = {			// create an object that we can reference without having to copy
-	camps: [								// the enum values in a semi-awkward way
-		CampOptions.strengthCountry,		// so this is an array of string values
-		CampOptions.agileCountry,
-		CampOptions.wisdomCountry,
-		CampOptions.dexterityCountry
+	races: [								// the enum values in a semi-awkward way
+		RaceOptions.human,		// so this is an array of string values
+		RaceOptions.dwarf,
+		RaceOptions.elf,
+		RaceOptions.halfling
 	],
 	classes: [
 		ClassOptions.warrior,
@@ -34,4 +34,4 @@ export const CharacterOptions = {			// create an object that we can reference wi
 		GenderOptions.male,
 		GenderOptions.female
 	]
-}
+};
