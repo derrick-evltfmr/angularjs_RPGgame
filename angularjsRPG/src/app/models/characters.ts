@@ -75,6 +75,11 @@ export class BaseCharacter {
 				this.currentHealth = health;
 				this.isIncapacitated = false;
 				this.skills = skills;
+				this.barriers = {
+					attack: 10,
+					sneak: 10,
+					persuade: 10
+				};
 		}
 
 		attack() {
