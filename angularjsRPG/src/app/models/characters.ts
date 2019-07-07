@@ -106,7 +106,7 @@ export class BaseCharacter {
 }
 
 export class Monster extends BaseCharacter {
-		isTrapped: boolean = false;				// default to false
+		isTrapped: boolean = false;				          // default to false
 		poisonStacks: number = 0;
 		isStrongPoison: boolean = false;
 		hasTakenPoisonDamageThisTurn: boolean = false;
@@ -147,13 +147,13 @@ export class Hero extends BaseCharacter {
 		this.experience -= ExperienceToLevel[this.level];	// index, so [] not ()
 		this.level++;
 		this.availableSkillPoints += 2;
-		if(this.experience >= ExperienceToLevel[this.level]) {
+		if (this.experience >= ExperienceToLevel[this.level]) {
 			this.levelUp();
 		}
 	}
 
 	equipNewArmor(armor: Armor): void {
-		if(this.equippedArmor){
+		if (this.equippedArmor){
 			this.barriers.attack -= this.equippedArmor.attackBarrierBonus;
 		}
 		this.equippedArmor = armor;
@@ -251,28 +251,28 @@ export class Priest extends Hero {
 	}
 }
 
-export const checkRace =(hero: Hero) => {
-	switch(hero.race) {
-		case RaceOptions.strengthCountry:
+export const checkRace = (hero: Hero) => {
+	switch (hero.race) {
+		case RaceOptions.human:
+			hero.skills.persuade += 2;
+			hero.skills.intelligence++;
+			hero.skills.sneak -= 2;
+			break;
+		case RaceOptions.elf:
+			hero.skills.attack += 2;
+			hero.skills.sneak ++;
+			hero.skills.persuade -= 2;
+			break;
+		case RaceOptions.dwarf:
 			hero.skills.attack += 2;
 			hero.skills.persuade++;
 			hero.skills.intelligence -= 2;
 			break;
-		case RaceOptions.agileCountry:
-			hero.skills.attack ++;
+		case RaceOptions.halfling:
 			hero.skills.sneak += 2;
+			hero.skills.attack++;
 			hero.skills.persuade -= 2;
-			break;
-		case RaceOptions.wisdomCountry:
-			hero.skills.intelligence += 2;
-			hero.skills.sneak++;
-			hero.skills.persuade -= 2;
-			break;
-		case RaceOptions.dexterityCountry:
-			hero.skills.persuade += 2;
-			hero.skills.intelligence++;
-			hero.skills.attack -= 2;
 			break;
 	}
-}
+};
 
