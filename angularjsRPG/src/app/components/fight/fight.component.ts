@@ -154,7 +154,44 @@ export class FightComponent{
 		this.nextTurn();
 	}
 
+	nextTurn() {
+		if (this.currentCharacter instanceof Monster
+			&& this.currentCharacter.poisonStacks
+			&& !this.currentCharacter.hasTakenPoisonDamageThisTurn) {
 
+				this.currentCharacter.hasTakenPoisonDamageThisTurn = true;
+				let maxDamage = this.currentCharacter.isStrongPoisoned ? 6 : 3;
+				let poisonDamage = (Math.floor(Math.random() * maxDamage) + 1 ) * this.currentCharacter. ...
+				this.currentCharacter.currentHealth -= poisonDamage;
+				this.displayMessage = `${this.currentCharacter.name} took ${poisonDamage} ...`;
+				if (this.currentCharacter.currentHealth <= 0) {
+					this.currentCharacter.isIncapacitated = true;
+					this.enemiesIncapacitated++;
+				}
+				setTimeout((function(){
+					this.checkIfWin();
+				}).bind(this),this.actionDelay);
+				return;
+			}
+
+			if (this.currentCharacter instanceof Monster && this.currentCharacter.hasTakenPoisonDamageThisTurn) {
+				this.currentCharacter.hasTakenPoisonDamageThisTurn = false;
+			}
+
+			this.availableTargets = Teams.none;
+			this.selectedAction = FightOptions.none;
+			this.characterIndex++;
+			let nextCharacter;
+
+			if (this.heroTurn) {
+				nextCharacter = this.heroParty[this.characterIndex];
+			} else {
+				nextCharacter = this.enemyParty[this.characterIndex];
+			}
+
+
+
+	}
 
 }
 
