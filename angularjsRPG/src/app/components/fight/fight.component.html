@@ -1,21 +1,45 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="container-fluid px-0">
+  <div class="row h-75">
+	<div class="col-1"></div>
+	<div class="col-2 heroes d-flex flex-column">
+		<div *ngFor="let hero of heroParty" class="hero d-flex flex-column" [ngClass]="{'active': currentCharacter === hero, 'targetable': availableTargets === _teams.heroes && !hero.isIncapacitated}" (click)="tryAttack(hero)">
+	  <img [src]="hero.spriteUrl" [alt]="hero.characterRole" class="mx-auto" />
+	  <div class="health-bar progress">
+		<div class="progress-bar" [style.width]="hero.currentHealth < 0 ? '0%' :(hero.currentHealth/hero.maxHealth) * 100 + '%'">
+		  {{hero.currentHealth > 0 ? hero.currentHealth + "/" + hero.maxHealth : ""}}
+		</div>
+	  </div>
+	</div>
+  </div>
+  <div class="col-6 d-flex flex-column justify-content-center">
+	<button *ngIf="!showNextChapterButton && !showGameOverButton" class="btn w-75 mb-5 mx-auto action-option" [class.selected]="selectedAction === _fightOptions.attack" (click)="selectOption(_fightOptions.attack)">Attack</button>
+	<button *ngIf="!showNextChapterButton && !showGameOverButton" class="btn w-75 mb-5 mx-auto action-option" [class.selected]="selectedAction === _fightOptions.specialAttack" (click)="selectOption(_fightOptions.specialAttack)">Special Attack</button>
+	<button *ngIf="showNextChapterButton" class="btn w-75 mb-5 mx-auto action-option" (click)="nextChapter()">Next Chapter</button>
+	<button *ngIf="showGameOverButton" class="btn w-75 mb-5 mx-auto action-option" (click)="gameOver()">Game Over</button>
+	<div class="message-box w-75 mx-auto">
+	  <p>
+		{{displayMessage}}
+	  </p>
+	  <p class="text-white col-12" *ngFor="let message of successMessages">
+		{{message}}
+	  </p>
+	</div>
+  </div>
+  <div class="col-2 enemies d-flex flex-column">
+	<div *ngFor="let enemy of enemyParty" class="enemy d-flex flex-column" [ngClass]="{'active': currentCharacter === enemy, 'targetable': availableTargets === _teams.enemies && !enemy.isIncapacitated}" (click)="tryAttack(enemy)">
+	  <img [src]="enemy.spriteUrl" [alt]="enemy.name" class="mx-auto" />
+	  <div class="health-bar progress">
+		<div class="progress-bar" [style.width]="enemy.currentHealth < 0 ? '0%' :(enemy.currentHealth/enemy.maxHealth) * 100 + '%'">
+		  {{enemy.currentHealth > 0 ? enemy.currentHealth + "/" + enemy.maxHealth : ""}}
+		</div>
+	  </div>
+	</div>
+  </div>
+  <div class="col-1"></div>
+  </div>
+  <div class="container-fluid h-25 options-bar">
+	<div class="row h-100 options-bar justify-content-center">
+		<inventory-component></inventory-component>
+	</div>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
-<router-outlet></router-outlet>

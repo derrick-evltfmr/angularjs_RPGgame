@@ -23,7 +23,7 @@
       "kebab-case"
     ],
     "indent": [
-        true,
+        false,
         "tabs",
         4
 ]   ,
