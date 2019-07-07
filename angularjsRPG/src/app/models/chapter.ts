@@ -24,7 +24,7 @@ export class Chapter {
 	enemyParty: Monster[];
 	sneakPersuadeFail: CharacterAction;
 	ifFail: FailureOptions;
-	ifSucceed: SuccessOptions[];
+	ifSucceed: SuccessOptions[];      // multiple options, one or all
 	rewards: {
 		experience: number,
 		equipment: (Weapon | Armor) [],		// array of Weapon or Armor

@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { CharacterOptions } from 'src/app/models/character-options';
+import { GameControllerService } from 'src/app/services/game-controller.service';
 
 @Component({
-  selector: "character-creation-component",
-  templateUrl: "./character-creation.component.html",
-  styleUrls: ["./character-creation.component.css"]
+	selector: "character-creation-component",
+	templateUrl: "./character-creation.component.html",
+	styleUrls: ["./character-creation.component.css"]
 })
 
 export class CharacterCreationComponent{
+	constructor(private gameControllerService: GameControllerService) {}
 
 	character = {                           // set up some properties for character
 		race: '--Choose--',                   // set the default to some string
@@ -17,7 +19,7 @@ export class CharacterCreationComponent{
 	}
 
 	characterComplete: boolean = false;     // set a characterComplete flag
-										                    	// typescript boolean
+																					// typescript boolean
 
 	races = CharacterOptions.races;
 	classes = CharacterOptions.classes;
@@ -55,7 +57,7 @@ export class CharacterCreationComponent{
 			return;
 		}
 
-		console.log(this.character);
-		// this.gameControllerService.setMainCharacter(this.character);
+		// console.log(this.character);
+		this.gameControllerService.setMainCharacter(this.character);
 	}
 }
