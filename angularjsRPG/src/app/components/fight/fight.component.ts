@@ -189,7 +189,28 @@ export class FightComponent{
 				nextCharacter = this.enemyParty[this.characterIndex];
 			}
 
-
+			if (nextCharacter) {
+				if (!nextCharacter.isIncapacitated) {
+					this.currentCharacter = nextCharacter;
+					this.displayMessage = `It's ${this.currentCharacter.name}'s turn`;
+					if (this.currentCharacter instanceof Hero) {
+						this.freezeActions = false;
+						if (this.currentCharacter.turnsUntilSpecialAvailableAgain) {
+							this.currentCharacter.turnsUntilSpecialAvailableAgain--;
+						}
+					} else {
+						setTimeout(() => {
+							this.takeEnemyTurn();
+						}, this.actionDelay);
+					}
+				} else {
+					this.nextTurn();
+				}
+			} else {
+				this.heroTurn = !this.heroTurn;
+				this.characterIndex = -1;
+				this.nextTurn();
+			}
 
 	}
 
