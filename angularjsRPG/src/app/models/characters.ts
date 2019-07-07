@@ -108,7 +108,7 @@ export class BaseCharacter {
 export class Monster extends BaseCharacter {
 		isTrapped: boolean = false;				          // default to false
 		poisonStacks: number = 0;
-		isStrongPoison: boolean = false;
+		isStrongPoisoned: boolean = false;
 		hasTakenPoisonDamageThisTurn: boolean = false;
 
 		// the parameters are what we want to pass in the constructor

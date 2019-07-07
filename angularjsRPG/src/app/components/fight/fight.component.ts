@@ -136,6 +136,25 @@ export class FightComponent{
 		}
 	}
 
+	checkIfWin() {
+		this.selectedAction = FightOptions.none;
+		if (this.enemiesIncapacitated === this.enemyParty.legnth) {
+			this.displayMessage = `All enemies have been defeated!`;
+			this.successMessages = this.gameControllerService.encounterSuccess();
+			this.showNextChapterButton = true;
+			this.gameControllerService.isFighting = false;
+			return;
+		}
+		if (this.heroesIncapacitated === this.heroParty.length) {
+			this.displayMessage = `All heroes have been defeated!`;
+			this.showGameOverButton = true;
+			this.gameControllerService.isFighting = false;
+			return;
+		}
+		this.nextTurn();
+	}
+
+
 
 }
 
