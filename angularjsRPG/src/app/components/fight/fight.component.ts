@@ -86,6 +86,57 @@ export class FightComponent{
 							At level 6 and above, you choose two targets to heal. The two targets can be the same hero.`;
 					}
 				}
-			}
+
+		}
 	}
+
+	tryAttack(target: BaseCharacter) {
+		if (this.freezeActions) {
+			return;
+		}
+		if (target.isIncapacitated) {
+			this.displayMessage = "That target is already incapacitated.";
+			return;
+		}
+
+		if (this.currentCharacter instanceof Monster && target instanceof Hero) {
+
+		}
+
+		if (this.selectedAction === FightOptions.attack) {
+			this.freezeActions = true;
+			this.attack(target);
+		} else if (this.currentCharacter instanceof Hero) {
+
+		} else {
+			this.displayMessage = `Please select an action option.`;
+		}
+	}
+
+	attack(target: BaseCharacter) {
+		this.availableTargets = Teams.none;
+		if (this.currentCharacter.attack() >= target.barriers.attack) {
+			let damage = this.currentCharacter.dealDamage();
+			target.currentHealth -= damage;
+			this.displayMessage = `${this.currentCharacter.name} hit ${target.name} dealing ${damage} damage.`;
+			setTimeout(() => {
+				if (target.currentHealth <= 0) {
+					target.isIncapacitated = true;
+					this.heroTurn ? this.enemiesIncapacitated++ : this.heroesIncapacitated++;
+					this.checkIfWin();
+				} else {
+					this.nextTurn();
+				}
+			}, this.actionDelay);
+		} else {
+			this.displayMessage = `${this.currentCharacter.name} Missed.`;
+			setTimeout(() => {
+				this.nextTurn();
+			}, this.actionDelay);
+		}
+	}
+
+
 }
+
+
