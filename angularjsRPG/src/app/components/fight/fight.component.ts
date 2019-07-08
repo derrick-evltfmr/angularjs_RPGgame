@@ -236,6 +236,15 @@ export class FightComponent{
 		}
 	}
 
+	nextChapter() {
+		this.gameControllerService.nextChapter();
+		this.router.navigateByUrl("/story");
+	}
+
+	gameOver() {
+		this.gameControllerService.gameOver();
+	}
+
 }
 
 
