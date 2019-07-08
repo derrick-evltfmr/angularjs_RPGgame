@@ -214,6 +214,28 @@ export class FightComponent{
 
 	}
 
+	takeEnemyTurn() {
+		if (this.currentCharacter instanceof Monster && this.currentCharacter.isTrapped) {
+
+		} else {
+			let target: Hero;
+			this.selectedAction = FightOptions.attack;
+
+			while (!target){
+				let randomTargetIndex = Math.floor(Math.random() * this.heroParty.length);
+				let potentialTarget = this.heroParty[randomTargetIndex];
+				if (!potentialTarget.isIncapacitated) {
+					target = potentialTarget;
+				}
+			}
+			this.displayMessage = `${this.currentCharacter.name} attacks ${target.name}.`;
+
+			setTimeout(() => {
+				this.tryAttack(target);
+			}, this.actionDelay);
+		}
+	}
+
 }
 
 
