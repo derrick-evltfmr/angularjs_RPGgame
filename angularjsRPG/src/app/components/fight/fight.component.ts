@@ -100,16 +100,108 @@ export class FightComponent{
 		}
 
 		if (this.currentCharacter instanceof Monster && target instanceof Hero) {
+			if (target.hasTrapDefence) {
+				this.currentCharacter.isTrapped = true;
 
+				if (target.hasDamagingTrap) {
+					let damage = Math.floor(Math.random() * 8) + 1;
+					this.currentCharacter.currentHealth -= damage;
+					this.displayMessage = `${target.name} was protected by a trap. ${this.currentCharacter.name}
+						is stuck in the trap, taking ${damage} damage.`;
+					if (this.currentCharacter.currentHealth <= 0) {
+						this.currentCharacter.isIncapacitated = true;
+						this.enemiesIncapacitated++;
+					}
+				} else {
+					this.displayMessage = `${target.name} was protected by a trap. ${this.currentCharacter.name}
+						is stuck in the trap.`;
+				}
+
+				target.hasTrapDefence = false;
+				target.hasDamagingTrap = false;
+				setTimeout(() => {
+					this.checkIfWin();
+				}, this.actionDelay);
+				return;
+			}
 		}
 
 		if (this.selectedAction === FightOptions.attack) {
 			this.freezeActions = true;
 			this.attack(target);
-		} else if (this.currentCharacter instanceof Hero) {
+		} else if (this.currentCharacter instanceof Hero
+			&& this.currentCharacter.level > 2
+			&& this.selectedAction === FightOptions.specialAttack) {
+
+				const upgraded: boolean = this.currentCharacter.level > 5;
+
+				if (this.currentCharacter instanceof Warrior) {
+					this.warriorSpecialAttack(target, upgraded);
+				}
+				if (this.currentCharacter instanceof Ranger) {
+					this.rangerSpecialAttack(target, upgraded);
+				}
+				if (this.currentCharacter instanceof Rogue) {
+					this.rogueSpecialAttack(target, upgraded);
+				}
+				if (this.currentCharacter instanceof Priest) {
+					this.priestSpecialAttack(target, upgraded);
+				}
 
 		} else {
 			this.displayMessage = `Please select an action option.`;
+		}
+	}
+
+	warriorSpecialAttack(target: BaseCharacter, upgraded: boolean) {
+		if (!(target instanceof Monster)) {
+			this.displayMessage = `Only enemies can be targeted for a warrior's special attack.`;
+			return;
+		} else if (this.currentCharacter instanceof Hero) {
+			this.freezeActions = true;
+			this.currentCharacter.turnsUntilSpecialAvailableAgain = this.turnsBetweenSpecial;
+			let doubleAttackPenalty = upgraded ? 0 : 4;
+			let firstTarget: BaseCharacter = this.selectedTargets[0];
+			let secondTarget: BaseCharacter = this.selectedTargets[1];
+
+			if (this.currentCharacter.attack() - doubleAttackPenalty >= firstTarget.barriers.attack) {
+				let damage = this.currentCharacter.dealDamage();
+				firstTarget.currentHealth -= damage;
+				this.displayMessage = `${this.currentCharacter.name} hit ${firstTarget.name} dealing ${damage} damage.`;
+				if (firstTarget.currentHealth <= 0){
+					firstTarget.isIncapacitated = true;
+					this.enemiesIncapacitated++;
+				}
+			} else {
+				this.displayMessage = `${this.currentCharacter.name} Missed.`;
+			}
+
+			setTimeout(() => {
+				if (this.currentCharacter.attack() - doubleAttackPenalty >= secondTarget.barriers.attack) {
+					let damage = this.currentCharacter.dealDamage();
+					secondTarget.currentHealth -= damage;
+					this.displayMessage = `${this.currentCharacter.name} hit ${secondTarget.name} dealing ${damage} damage.`;
+					if (secondTarget.currentHealth <= 0){
+						secondTarget.isIncapacitated = true;
+						this.enemiesIncapacitated++;
+					}
+				} else {
+					this.displayMessage = `${this.currentCharacter.name} Missed.`;
+				}
+
+				setTimeout(() => {
+					this.selectedTargets = [];
+					this.checkIfWin();
+				}, this.actionDelay);
+			}, this.actionDelay);
+
+
+		}
+
+		this.selectedTargets.push(target);
+
+		if (this.selectedTargets.length < 2){
+			this.displayMessage = `Select a second target for your warrior's special attack`;
 		}
 	}
 
