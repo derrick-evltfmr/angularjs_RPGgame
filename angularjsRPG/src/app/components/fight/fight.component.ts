@@ -230,6 +230,27 @@ export class FightComponent{
 
 	}
 
+	rogueSpecialAttack(target: BaseCharacter, upgraded: boolean) {
+		if (!(target instanceof Monster)) {
+			this.displayMessage = `Only a monster can be targeted for a rogue's special attack`;
+			return;
+		}
+
+		this.freezeActions = true;
+		if (this.currentCharacter instanceof Hero) {
+			this.currentCharacter.turnsUntilSpecialAvailableAgain = this.turnsBetweenSpecial;
+		}
+
+		target.isStrongPoisoned = upgraded;
+		target.poisonStacks++;
+		this.displayMessage = `${target.name} was poisoned. (${target.poisonStacks} stack(s))`;
+
+		setTimeout(() => {
+			this.nextTurn();
+		}, this.actionDelay);
+
+	}
+
 	attack(target: BaseCharacter) {
 		this.availableTargets = Teams.none;
 		if (this.currentCharacter.attack() >= target.barriers.attack) {
