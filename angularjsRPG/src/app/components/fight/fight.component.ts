@@ -205,6 +205,31 @@ export class FightComponent{
 		}
 	}
 
+	rangerSpecialAttack(target: BaseCharacter, upgraded: boolean) {
+		if (!(target instanceof Hero)) {
+			this.displayMessage = `Only a hero can be targeted for a ranger's special attack`;
+			return;
+		}
+
+		if (target.hasTrapDefence) {
+			this.displayMessage = `Target hero already has a trap defense in place.`;
+			return;
+		}
+
+		this.freezeActions = true;
+		if (this.currentCharacter instanceof Hero) {
+			this.currentCharacter.turnsUntilSpecialAvailableAgain = this.turnsBetweenSpecial;
+		}
+
+		this.displayMessage = `${this.currentCharacter.name} set up a grap to protect ${target.name}`;
+		target.hasTrapDefence = true;
+		target.hasDamagingTrap = upgraded;
+		setTimeout(() => {
+			this.nextTurn();
+		}, this.actionDelay);
+
+	}
+
 	attack(target: BaseCharacter) {
 		this.availableTargets = Teams.none;
 		if (this.currentCharacter.attack() >= target.barriers.attack) {
