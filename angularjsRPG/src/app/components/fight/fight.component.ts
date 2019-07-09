@@ -351,16 +351,16 @@ export class FightComponent{
 
 				this.currentCharacter.hasTakenPoisonDamageThisTurn = true;
 				let maxDamage = this.currentCharacter.isStrongPoisoned ? 6 : 3;
-				let poisonDamage = (Math.floor(Math.random() * maxDamage) + 1 ) * this.currentCharacter. ...
+				let poisonDamage = (Math.floor(Math.random() * maxDamage) + 1 ) * this.currentCharacter.poisonStacks;
 				this.currentCharacter.currentHealth -= poisonDamage;
-				this.displayMessage = `${this.currentCharacter.name} took ${poisonDamage} ...`;
+				this.displayMessage = `${this.currentCharacter.name} took ${poisonDamage} poison damage`;
 				if (this.currentCharacter.currentHealth <= 0) {
 					this.currentCharacter.isIncapacitated = true;
 					this.enemiesIncapacitated++;
 				}
-				setTimeout((function(){
+				setTimeout(() => {
 					this.checkIfWin();
-				}).bind(this),this.actionDelay);
+				}, this.actionDelay);
 				return;
 			}
 
@@ -406,7 +406,11 @@ export class FightComponent{
 
 	takeEnemyTurn() {
 		if (this.currentCharacter instanceof Monster && this.currentCharacter.isTrapped) {
-
+			this.currentCharacter.isTrapped = false;
+			this.displayMessage = `${this.currentCharacter.name} freed itself from the trap.`;
+			setTimeout(() => {
+				this.nextTurn();
+			}, this.actionDelay);
 		} else {
 			let target: Hero;
 			this.selectedAction = FightOptions.attack;
