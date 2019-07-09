@@ -16,8 +16,7 @@ enum Teams {
 })
 
 export class FightComponent{
-	consturctor(private gameControllerService: GameControllerService,
-		private router: Router) {}
+	constructor(private gameControllerService: GameControllerService, private router: Router) {}
 
 	heroTurn: boolean = true;
 	actionDelay: number = this.gameControllerService.actionDelay;
@@ -328,7 +327,7 @@ export class FightComponent{
 
 	checkIfWin() {
 		this.selectedAction = FightOptions.none;
-		if (this.enemiesIncapacitated === this.enemyParty.legnth) {
+		if (this.enemiesIncapacitated === this.enemyParty.length) {
 			this.displayMessage = `All enemies have been defeated!`;
 			this.successMessages = this.gameControllerService.encounterSuccess();
 			this.showNextChapterButton = true;
