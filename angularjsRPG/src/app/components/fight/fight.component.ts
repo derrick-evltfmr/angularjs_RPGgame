@@ -251,6 +251,58 @@ export class FightComponent{
 
 	}
 
+	priestSpecialAttack(target: BaseCharacter, upgraded: boolean) {
+		if (!(target instanceof Hero)) {
+			this.displayMessage = `Only a hero can be targeted for a priest's special ability`;
+			return;
+		}
+
+		if (upgraded) {
+			this.selectedTargets.push(target);
+
+			if (this.selectedTargets.length < 2) {
+				this.displayMessage = `Select a second target to heal.`;
+				return;
+			}
+
+			this.freezeActions = true;
+			if (this.currentCharacter instanceof Hero) {
+				this.currentCharacter.turnsUntilSpecialAvailableAgain = this.turnsBetweenSpecial;
+			}
+
+			let heal1 = Math.floor((Math.random() * 6) + 1 + this.currentCharacter.skills.intelligence);
+			let heal2 = Math.floor((Math.random() * 6) + 1 + this.currentCharacter.skills.intelligence);
+			let target1 = this.selectedTargets[0];
+			let target2 = this.selectedTargets[1];
+
+			target1.currentHealth = target1.currentHealth + heal1 > target1.maxHealth ? target1.maxHealth : target1.currentHealth + heal1;
+			this.displayMessage = `${target1.name} was healed for ${heal1} health.`;
+
+			setTimeout(() => {
+				target2.currentHealth = target2.currentHealth + heal2 > target2.maxHealth ? target2.maxHealth : target2.currentHealth + heal2;
+				this.displayMessage = `${target2.name} was healed for ${heal2} health.`;
+				this.selectedTargets = [];
+				setTimeout(() => {
+					this.nextTurn();
+				}, this.actionDelay);
+			}, this.actionDelay);
+
+		} else {
+			this.freezeActions = true;
+			if (this.currentCharacter instanceof Hero) {
+				this.currentCharacter.turnsUntilSpecialAvailableAgain = this.turnsBetweenSpecial;
+			}
+
+			let healing = Math.floor((Math.random() * 6) + 1 + this.currentCharacter.skills.intelligence);
+			target.currentHealth = target.currentHealth + healing > target.maxHealth ? target.maxHealth : target.currentHealth + healing;
+			this.displayMessage = `${target.name} was healed for ${healing} health.`;
+
+			setTimeout(() => {
+				this.nextTurn();
+			}, this.actionDelay);
+		}
+	}
+
 	attack(target: BaseCharacter) {
 		this.availableTargets = Teams.none;
 		if (this.currentCharacter.attack() >= target.barriers.attack) {
