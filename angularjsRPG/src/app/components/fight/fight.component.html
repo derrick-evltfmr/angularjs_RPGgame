@@ -1,45 +1,51 @@
 <div class="container-fluid px-0">
-  <div class="row h-75">
-	<div class="col-1"></div>
-	<div class="col-2 heroes d-flex flex-column">
-		<div *ngFor="let hero of heroParty" class="hero d-flex flex-column" [ngClass]="{'active': currentCharacter === hero, 'targetable': availableTargets === _teams.heroes && !hero.isIncapacitated}" (click)="tryAttack(hero)">
-	  <img [src]="hero.spriteUrl" [alt]="hero.characterRole" class="mx-auto" />
-	  <div class="health-bar progress">
-		<div class="progress-bar" [style.width]="hero.currentHealth < 0 ? '0%' :(hero.currentHealth/hero.maxHealth) * 100 + '%'">
-		  {{hero.currentHealth > 0 ? hero.currentHealth + "/" + hero.maxHealth : ""}}
+	<div class="row h-75">
+		<div class="col-1"></div>
+		<div class="col-2 heroes d-flex flex-column">
+			<div *ngFor="let hero of heroParty" class="hero d-flex flex-column" [ngClass]="{'active': currentCharacter === hero, 'targetable': availableTargets === _teams.heroes && !hero.isIncapacitated}" (click)="tryAttack(hero)">
+				<img [src]="hero.spriteUrl" [alt]="hero.characterRole" class="mx-auto" />
+				<div class="health-bar progress">
+					<div class="progress-bar" [style.width]="hero.currentHealth < 0 ? '0%' :(hero.currentHealth/hero.maxHealth) * 100 + '%'">
+						{{hero.currentHealth > 0 ? hero.currentHealth + "/" + hero.maxHealth : ""}}
+					</div>
+	  			</div>
+			</div>
 		</div>
-	  </div>
-	</div>
-  </div>
-  <div class="col-6 d-flex flex-column justify-content-center">
-	<button *ngIf="!showNextChapterButton && !showGameOverButton" class="btn w-75 mb-5 mx-auto action-option" [class.selected]="selectedAction === _fightOptions.attack" (click)="selectOption(_fightOptions.attack)">Attack</button>
-	<button *ngIf="!showNextChapterButton && !showGameOverButton" class="btn w-75 mb-5 mx-auto action-option" [class.selected]="selectedAction === _fightOptions.specialAttack" (click)="selectOption(_fightOptions.specialAttack)">Special Attack</button>
-	<button *ngIf="showNextChapterButton" class="btn w-75 mb-5 mx-auto action-option" (click)="nextChapter()">Next Chapter</button>
-	<button *ngIf="showGameOverButton" class="btn w-75 mb-5 mx-auto action-option" (click)="gameOver()">Game Over</button>
-	<div class="message-box w-75 mx-auto">
-	  <p>
-		{{displayMessage}}
-	  </p>
-	  <p class="text-white col-12" *ngFor="let message of successMessages">
-		{{message}}
-	  </p>
-	</div>
-  </div>
-  <div class="col-2 enemies d-flex flex-column">
-	<div *ngFor="let enemy of enemyParty" class="enemy d-flex flex-column" [ngClass]="{'active': currentCharacter === enemy, 'targetable': availableTargets === _teams.enemies && !enemy.isIncapacitated}" (click)="tryAttack(enemy)">
-	  <img [src]="enemy.spriteUrl" [alt]="enemy.name" class="mx-auto" />
-	  <div class="health-bar progress">
-		<div class="progress-bar" [style.width]="enemy.currentHealth < 0 ? '0%' :(enemy.currentHealth/enemy.maxHealth) * 100 + '%'">
-		  {{enemy.currentHealth > 0 ? enemy.currentHealth + "/" + enemy.maxHealth : ""}}
+
+		<div class="col-6 d-flex flex-column justify-content-center">
+			<button *ngIf="!showNextChapterButton && !showGameOverButton" class="btn w-75 mb-5 mx-auto action-option" [class.selected]="selectedAction === _fightOptions.attack" (click)="selectOption(_fightOptions.attack)">Attack</button>
+			<button *ngIf="!showNextChapterButton && !showGameOverButton" class="btn w-75 mb-5 mx-auto action-option" [class.selected]="selectedAction === _fightOptions.specialAttack" (click)="selectOption(_fightOptions.specialAttack)">Special Attack</button>
+			<button *ngIf="showNextChapterButton" class="btn w-75 mb-5 mx-auto action-option" (click)="nextChapter()">Next Chapter</button>
+			<button *ngIf="showGameOverButton" class="btn w-75 mb-5 mx-auto action-option" (click)="gameOver()">Game Over</button>
+			<div class="message-box w-75 mx-auto">
+				<p>
+					{{displayMessage}}
+				</p>
+				<p class="text-white col-12" *ngFor="let message of successMessages">
+					{{message}}
+				</p>
+			</div>
 		</div>
-	  </div>
+
+		<div class="col-2 heroes d-flex flex-column">
+				<div *ngFor="let hero of heroParty" class="hero d-flex flex-column" [ngClass]="{'active': currentCharacter === hero, 'targetable': availableTargets === _teams.heroes && !hero.isIncapacitated}" (click)="tryAttack(hero)">
+					<img [src]="hero.spriteUrl" [alt]="hero.characterRole" class="mx-auto" />
+					<div class="health-bar progress">
+						<div class="progress-bar" [style.width]="hero.currentHealth < 0 ? '0%' :(hero.currentHealth/hero.maxHealth) * 100 + '%'">
+							{{hero.currentHealth > 0 ? hero.currentHealth + "/" + hero.maxHealth : ""}}
+						</div>
+					</div>
+				</div>
+		</div>
+
+		<div class="col-1"></div>
+
 	</div>
-  </div>
-  <div class="col-1"></div>
-  </div>
-  <div class="container-fluid h-25 options-bar">
-	<div class="row h-100 options-bar justify-content-center">
-		<inventory-component></inventory-component>
+
+  	<div class="row-empty"></div><!--Added this empty div row to make the inventory down a bit-->
+	<div class="container-fluid h-25 options-bar">
+		<div class="row h-100 options-bar justify-content-center">
+			<inventory-component></inventory-component>
+		</div>
 	</div>
-  </div>
 </div>

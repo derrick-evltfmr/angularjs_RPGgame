@@ -17,3 +17,13 @@
 	background-color: #d2b48c;
 	border-top: 2px solid dargreen;
 }
+
+button {
+	background-color: rgba(255,255,255,0.2);
+	color: orange;
+	font-weight: bold;
+}
+
+.row-empty {
+	height:10%;
+}

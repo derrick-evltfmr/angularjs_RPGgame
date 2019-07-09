@@ -3,11 +3,11 @@
 }
 
 .hero, .enemy {
-	height: 33..33%;
+	height: 34%;
 }
 
 .hero img {
-	width: 65;                  /* may need to adjust this to make the image look nicer */
+	width: 100%;                  /* may need to adjust this to make the image look nicer */
 	height: calc(100 - 20px);
 }
 
@@ -44,7 +44,7 @@
 .message-box {
 	height: 30%;
 	background-color: rgba (0,0,0,0.5);
-	color: white;
+	color: black;
 	border: 3px solid #d2b48c;
 	padding: 10px;
 	border-radius: 7px;
@@ -58,9 +58,14 @@
 
 .action-option {
 	cursor: pointer;
+	background-color: rgba(0,0,0,0.5)
 }
 
 .action-option.selected {
 	background-color: rgb(0,0,150);
 	color: white;
+}
+
+.row-empty {
+	height:10%;
 }
