@@ -19,8 +19,7 @@ export class GameControllerService {
 	partyInventory: (Weapon | Armor)[] = [];
 	availableHeroes: Hero[] = [];
 
-	enemyParty: Monster[] = [ new Monster("Goblin", 5, {attack: 2, sneak: 0, persuade: 0}, {attack: 10, sneak: 10, persuade: 10},
-		 1, 3, "../../assets/goblin.png")];
+	enemyParty: Monster[] = [];
 
 	setMainCharacter(character) {
 		switch (character.class) {

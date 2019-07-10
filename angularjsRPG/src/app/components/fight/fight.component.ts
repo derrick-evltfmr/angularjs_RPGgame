@@ -26,7 +26,7 @@ export class FightComponent{
 
 	heroParty: Hero[] = this.gameControllerService.heroParty;
 	heroesIncapacitated: number = 0;
-	enemyParty: Monster[] = this.gameControllerService.enemyParty;
+	enemyParty: Monster[] = this.gameControllerService.currentChapter.enemyParty; // somehow without currentChapter it doesn't work
 	enemiesIncapacitated: number = 0;
 
 	currentCharacter: BaseCharacter = this.heroParty[this.characterIndex];
@@ -414,7 +414,7 @@ export class FightComponent{
 			let target: Hero;
 			this.selectedAction = FightOptions.attack;
 
-			while (!target){
+			while (!target) {
 				let randomTargetIndex = Math.floor(Math.random() * this.heroParty.length);
 				let potentialTarget = this.heroParty[randomTargetIndex];
 				if (!potentialTarget.isIncapacitated) {
