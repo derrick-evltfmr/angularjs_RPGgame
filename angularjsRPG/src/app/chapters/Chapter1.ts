@@ -17,7 +17,7 @@ export const Chapter1: Chapter = {
 	],
 
 	enemyParty: [
-		new Monster("Goblin", 5, {attack: 2, sneak: 0, persuade: 0}, {attack: 5, sneak: 5, persuade: 5}, 1, 3, "../../assets/goblin.png")
+		new Monster("Goblin", 5, {attack: 2, sneak: 0, persuade: 0}, {attack: 7, sneak: 7, persuade: 7}, 1, 3, "../../assets/goblin.png")
 					// (name, health, skills, barriers, minDamage, maxDamage, spriteUrl)
 	],
 
@@ -33,7 +33,7 @@ export const Chapter1: Chapter = {
 
 	rewards: {
 		experience: 3000,
-		equipment: [new Weapon("Rusty Sword", 1, 6)],
+		equipment: [new Weapon("Rusty Sword", 2, 6)],
 		newHero: new Rogue("Kenneth", GenderOptions.male, RaceOptions.dwarf, 1, 8, {attack: 1, sneak: 2,
 			persuade: 1, intelligence: 1}, new Weapon("Dagger", 1, 4), new Armor("Clothes", 0))
 
