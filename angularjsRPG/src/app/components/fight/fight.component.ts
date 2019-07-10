@@ -90,7 +90,7 @@ export class FightComponent{
 	}
 
 	tryAttack(target: BaseCharacter) {
-		if (this.freezeActions) {
+		if (this.freezeActions && this.heroTurn) {
 			return;
 		}
 		if (target.isIncapacitated) {
