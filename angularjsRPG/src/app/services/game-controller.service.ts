@@ -20,6 +20,10 @@ export class GameControllerService {
 	availableHeroes: Hero[] = [];
 
 	enemyParty: Monster[] = [];
+/*
+	numberOfAllCharacters = Object.keys(characterId).length / 2; 			// get the number of enums, not applicable for string enum
+	teamMemberExists = new Array(this.numberOfAllCharacters).fill(false);
+*/
 
 	setMainCharacter(character) {
 		switch (character.class) {
@@ -57,7 +61,7 @@ export class GameControllerService {
 					this.heroParty.forEach(hero => {
 						hero.experience += this.currentChapter.rewards.experience;
 						if (hero.experience >= ExperienceToLevel[hero.level]) {
-							messages.push(`${hero.name} leveled up! Upgrade their stats on the inventory screen.`)
+							messages.push(`${hero.name} leveled up! Upgrade the stats on the inventory screen.`)
 							hero.levelUp();
 						}
 					});
@@ -105,5 +109,100 @@ export class GameControllerService {
 
 		this.router.navigateByUrl("/");
 	}
+
+	/*
+	checkHeroIdentity = (hero: Hero) => {
+		switch (hero.gender) {
+			case GenderOptions.male:
+				switch (hero.characterRole) {
+					case ClassOptions.warrior:
+						this.teamMemberExists[characterId.maleWarrior] = true;
+						break;
+					case ClassOptions.ranger:
+						this.teamMemberExists[characterId.maleRanger] = true;
+						break;
+					case ClassOptions.rogue:
+						this.teamMemberExists[characterId.maleRogue] = true;
+						break;
+					case ClassOptions.priest:
+						this.teamMemberExists[characterId.malePriest] = true;
+						break;
+				}
+				break;
+			case GenderOptions.female:
+				switch (hero.characterRole) {
+					case ClassOptions.warrior:
+						this.teamMemberExists[characterId.femaleWarrior] = true;
+						break;
+					case ClassOptions.ranger:
+						this.teamMemberExists[characterId.femaleRanger] = true;
+						break;
+					case ClassOptions.rogue:
+						this.teamMemberExists[characterId.femaleRogue] = true;
+						break;
+					case ClassOptions.priest:
+						this.teamMemberExists[characterId.femalePriest] = true;
+						break;
+				}
+				break;
+		}
+	}
+
+	pickRewardingHero(): Hero {
+		this.heroParty.forEach(hero => {
+			this.checkHeroIdentity(hero);
+		});
+		this.availableHeroes.forEach(hero => {
+			this.checkHeroIdentity(hero);
+		});
+		let OK = false;
+		let pickHeroId = 0;
+		let pickHero;
+		while (!OK) {
+			pickHeroId = Math.floor(Math.random() * this.numberOfAllCharacters);	// 0 to maxIndex (number of characters -1)
+			if (this.teamMemberExists[pickHeroId] === false) {
+				OK = true;
+			}
+		}
+
+		switch (pickHeroId) {
+			case characterId.maleWarrior:
+				pickHero = new Warrior("Benjamin", GenderOptions.male, RaceOptions.human, 1, 10, {attack: 2, sneak: 1,
+						persuade: 1, intelligence: 1}, new Weapon("Sword", 1, 4), new Armor("Clothes", 0));
+				break;
+			case characterId.femaleWarrior:
+				pickHero = new Warrior("Jessica", GenderOptions.female, RaceOptions.human, 1, 10, {attack: 2, sneak: 1,
+						persuade: 1, intelligence: 1}, new Weapon("Sword", 1, 4), new Armor("Clothes", 0));
+				break;
+			case characterId.maleRanger:
+				pickHero = new Ranger("Robin", GenderOptions.male, RaceOptions.elf, 1, 8, {attack: 1, sneak: 1,
+						persuade: 2, intelligence: 1}, new Weapon("Bow", 1, 4), new Armor("Clothes", 0));
+				break;
+			case characterId.femaleRanger:
+				pickHero = new Ranger("Iris", GenderOptions.female, RaceOptions.elf, 1, 8, {attack: 1, sneak: 1,
+						persuade: 2, intelligence: 1}, new Weapon("Bow", 1, 4), new Armor("Clothes", 0));
+				break;
+			case characterId.maleRogue:
+				pickHero = new Rogue("Sheen", GenderOptions.male, RaceOptions.dwarf, 1, 8, {attack: 1, sneak: 2,
+						persuade: 1, intelligence: 1}, new Weapon("Dagger", 1, 4), new Armor("Clothes", 0));
+				break;
+			case characterId.femaleRogue:
+				pickHero = new Rogue("Katherina", GenderOptions.female, RaceOptions.dwarf, 1, 8, {attack: 1, sneak: 2,
+						persuade: 1, intelligence: 1}, new Weapon("Dagger", 1, 4), new Armor("Clothes", 0));
+				break;
+			case characterId.malePriest:
+				pickHero = new Ranger("John", GenderOptions.male, RaceOptions.halfling, 1, 6, {attack: 1, sneak: 1,
+						persuade: 1, intelligence: 2}, new Weapon("Wand", 1, 4), new Armor("Clothes", 0));
+				break;
+			case characterId.femaleRanger:
+				pickHero = new Ranger("Elizabeth", GenderOptions.female, RaceOptions.halfling, 1, 6, {attack: 1, sneak: 1,
+						persuade: 1, intelligence: 2}, new Weapon("Wand", 1, 4), new Armor("Clothes", 0));
+				break;
+		}
+
+		return pickHero;
+
+	}
+	*/
 
 }

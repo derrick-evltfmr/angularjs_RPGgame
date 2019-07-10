@@ -188,7 +188,7 @@ export class Warrior extends Hero {
 
 	// override the levelUp()
 	levelUp(): void {
-		this.maxHealth = Math.floor(Math.random() * 10) + 1;	// increase 1~10 to health
+		this.maxHealth += Math.floor(Math.random() * 10) + 1;	// increase 1~10 to health
 		this.currentHealth = this.maxHealth;					// reset their health
 		super.levelUp();										// go through the experience and level counter
 	}
@@ -207,7 +207,7 @@ export class Ranger extends Hero {
 	}
 
 	levelUp(): void {
-		this.maxHealth = Math.floor(Math.random() * 8) + 1;
+		this.maxHealth += Math.floor(Math.random() * 8) + 1;
 		this.currentHealth = this.maxHealth;
 		super.levelUp();
 	}
@@ -226,7 +226,7 @@ export class Rogue extends Hero {
 	}
 
 	levelUp(): void {
-		this.maxHealth = Math.floor(Math.random() * 8) + 1;
+		this.maxHealth += Math.floor(Math.random() * 8) + 1;
 		this.currentHealth = this.maxHealth;
 		super.levelUp();
 	}
@@ -245,7 +245,7 @@ export class Priest extends Hero {
 	}
 
 	levelUp(): void {
-		this.maxHealth = Math.floor(Math.random() * 6) + 1;
+		this.maxHealth += Math.floor(Math.random() * 6) + 1;
 		this.currentHealth = this.maxHealth;
 		super.levelUp();
 	}
@@ -275,4 +275,17 @@ export const checkRace = (hero: Hero) => {
 			break;
 	}
 };
+
+/*
+export enum characterId {
+	maleWarrior,
+	femaleWarrior,
+	maleRanger,
+	femaleRanger,
+	maleRogue,
+	femaleRogue,
+	malePriest,
+	femalePriest
+}
+*/
 

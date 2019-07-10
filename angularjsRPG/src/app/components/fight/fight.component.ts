@@ -304,7 +304,7 @@ export class FightComponent{
 
 	attack(target: BaseCharacter) {
 		this.availableTargets = Teams.none;
-		if (this.currentCharacter.attack() >= target.barriers.attack) {
+		if (this.currentCharacter.attack() >= target.barriers.attack - 1) {
 			let damage = this.currentCharacter.dealDamage();
 			target.currentHealth -= damage;
 			this.displayMessage = `${this.currentCharacter.name} hit ${target.name} dealing ${damage} damage.`;
