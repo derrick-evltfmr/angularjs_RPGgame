@@ -1,0 +1,17 @@
+.open-inventory {
+	background-color: black;
+	color: white;
+	font-size: 30px;
+	margin-top: calc(12.5vh - 30px);
+	cursor: pointer;
+}
+
+.dark-overlay {
+	background: rgba(0,0,0,0.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 100;	/* show above anything else */
+}
