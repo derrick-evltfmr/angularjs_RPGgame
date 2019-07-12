@@ -76,7 +76,11 @@
 					<p class="mb-5">{{selectedHero.equippedWeapon.name}} -- Min Damage: {{selectedHero.equippedWeapon.minDamage}}, Max Damage: {{selectedHero.equippedWeapon.maxDamage}}</p>
 					<h6>Armor:</h6>
 					<p class="mb-5">{{selectedHero.equippedArmor.name}} -- Armor Bonus: {{selectedHero.equippedArmor.attackBarrierBonus}}</p>
-
+					<h3 class="mb-3">Remove Hero From Party</h3>
+					<p *ngIf="selectedHero === mainCharacter">
+						You cannot remove the main character from the party.
+					</p>
+					<button *ngIf="selectedHero !== mainCharacter" class="btn btn-danger remove-character" (click)="removeCharacterFromParty()">Remove</button>
 
 				</div>
 			</div>
