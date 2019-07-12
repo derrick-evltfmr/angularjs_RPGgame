@@ -67,6 +67,8 @@
 							<p *ngIf="selectedHero.availableSkillPoints" class="improve-skill" (click)="improveSkill(_characterSkills.intelligence)"><i class="fa fa-plus"></i></p>
 						</div>
 					</div>
+					<h6 *ngIf="selectedHero.availableSkillPoints">Available Skill Points: {{selectedHero.availableSkillPoints}}</h6>
+					<h6 *ngIf="!selectedHero.availableSkillPoints">Experience: {{selectedHero.experience}}/{{_experienceToLevel[selectedHero.level]}}</h6>
 				</div>
 			</div>
 		</div>
