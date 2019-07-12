@@ -70,6 +70,15 @@
 					<h6 *ngIf="selectedHero.availableSkillPoints">Available Skill Points: {{selectedHero.availableSkillPoints}}</h6>
 					<h6 *ngIf="!selectedHero.availableSkillPoints">Experience: {{selectedHero.experience}}/{{_experienceToLevel[selectedHero.level]}}</h6>
 				</div>
+				<div class="col-4 p-3 text-center d-flex flex-column">
+					<h3 class="mb-5">Equipped Items</h3>
+					<h6>Weapon:</h6>
+					<p class="mb-5">{{selectedHero.equippedWeapon.name}} -- Min Damage: {{selectedHero.equippedWeapon.minDamage}}, Max Damage: {{selectedHero.equippedWeapon.maxDamage}}</p>
+					<h6>Armor:</h6>
+					<p class="mb-5">{{selectedHero.equippedArmor.name}} -- Armor Bonus: {{selectedHero.equippedArmor.attackBarrierBonus}}</p>
+
+
+				</div>
 			</div>
 		</div>
 	</div>
