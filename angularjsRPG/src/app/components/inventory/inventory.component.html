@@ -42,6 +42,32 @@
 						<button class="btn" (click)="addHeroToParty(hero)">Add to Party</button>
 					</div>
 				</div>
+				<div *ngIf="!showAvailableHeroesScreen" class="row">
+					<div class="col-4 p-3 text-center">
+						<img [src]="selectedHero.spriteUrl" [alt]="selectedHero.name" class="img-fluid mb-3" />
+						<h5>{{selectedHero.name}} - {{selectedHero.characterRole}} - level {{selectedHero.level}}</h5>
+						<div class="row">
+							<h6>ATK</h6>
+							<p>{{selectedHero.skills.attack}}</p>
+							<p *ngIf="selectedHero.availableSkillPoints" class="improve-skill" (click)="improveSkill(_characterSkills.attack)"><i class="fa fa-plus"></i></p>
+						</div>
+						<div class="row">
+							<h6>SNK</h6>
+							<p>{{selectedHero.skills.sneak}}</p>
+							<p *ngIf="selectedHero.availableSkillPoints" class="improve-skill" (click)="improveSkill(_characterSkills.sneak)"><i class="fa fa-plus"></i></p>
+						</div>
+						<div class="row">
+							<h6>PERS</h6>
+							<p>{{selectedHero.skills.persuade}}</p>
+							<p *ngIf="selectedHero.availableSkillPoints" class="improve-skill" (click)="improveSkill(_characterSkills.persuade)"><i class="fa fa-plus"></i></p>
+						</div>
+						<div class="row">
+							<h6>ATK</h6>
+							<p>{{selectedHero.skills.intelligence}}</p>
+							<p *ngIf="selectedHero.availableSkillPoints" class="improve-skill" (click)="improveSkill(_characterSkills.intelligence)"><i class="fa fa-plus"></i></p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
