@@ -40,3 +40,20 @@
 .hero-tab.selected {
 	border-bottom: none;
 }
+
+.add-hero {
+	border-bottom: 2px solid darkgreen;
+	font-size: 50px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.close-button {
+	font-size: 50px;
+	position: absolute;
+	z-index: 102;
+	top: -40px;
+	right: -20px;
+	cursor: pointer;
+	color: silver;
+}
