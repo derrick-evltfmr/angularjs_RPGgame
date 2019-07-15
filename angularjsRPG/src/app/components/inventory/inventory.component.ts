@@ -13,7 +13,20 @@ import { Hero, Weapon, Armor, CharacterSkills, ExperienceToLevel } from '../../m
 export class InventoryComponent {
 	constructor(private gameControllerService: GameControllerService) {}
 
+	inventoryIsOpen: boolean = false;
+
+	_characterSkills: typeof CharacterSkills = CharacterSkills;
+	heroParty: Hero[] = this.gameControllerService.heroParty;
+	mainCharacter: Hero = this.gameControllerService.mainCharacter;
+	availableHeroes: Hero[] = this.gameControllerService.availableHeroes;
+	inventory: (Weapon|Armor)[] = this.gameControllerService.partyInventory;
+	_experienceToLevel: typeof ExperienceToLevel = ExperienceToLevel;
+
+	selectedHero: Hero = this.heroParty[0];
+	showAvailableHeroesScreen: boolean = false;
+	isFighting: boolean = this.gameControllerService.isFighting;
 }
+
 
 
 
