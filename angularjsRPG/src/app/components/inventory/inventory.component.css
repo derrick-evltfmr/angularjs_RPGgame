@@ -26,3 +26,17 @@
 	width: 60%;
 	z-index: 101;	/* above the dark overlay */
 }
+
+.hero-tab {
+	border-right: 2px solid darkgreen;
+	border-bottom: 2px solid darkgreen;
+	cursor: pointer;
+}
+
+.hero-tab:last-child {	/* the last element of the list that match */
+	border-right: none;
+}
+
+.hero-tab.selected {
+	border-bottom: none;
+}
