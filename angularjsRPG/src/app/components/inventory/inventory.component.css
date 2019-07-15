@@ -70,3 +70,18 @@
 	overflow-y: auto;
 }
 
+.inventory-display .item {
+	border-bottom: 1px solid white;
+}
+
+.inventory-display .item:last-child {
+	border-bottom: none;
+}
+
+.inventory-display .equip-button {
+	cursor: pointer;
+}
+
+.available-heroes-screen {
+	overflow-y: auto;
+}
