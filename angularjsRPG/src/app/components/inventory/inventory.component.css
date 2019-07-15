@@ -57,3 +57,16 @@
 	cursor: pointer;
 	color: silver;
 }
+
+.improve-skill {
+	cursor: pointer;
+}
+
+.inventory-display {
+	border: 2px solid darkgreen;
+	background: rgba(0,0,0,0.5);
+	border-radius: 7px;
+	height: 450px;
+	overflow-y: auto;
+}
+
