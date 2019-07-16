@@ -63,6 +63,11 @@ export class InventoryComponent {
 		this.inventory.splice(this.inventory.indexOf(item), 1);
 	}
 
+	removeCharacterFromParty() {
+		this.availableHeroes.push(this.selectedHero);
+		this.heroParty.splice(this.heroParty.indexOf(this.selectedHero), 1);
+		this.selectedHero = this.mainCharacter;
+	}
 
 
 }
