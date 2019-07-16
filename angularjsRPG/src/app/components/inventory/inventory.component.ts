@@ -52,6 +52,17 @@ export class InventoryComponent {
 		this.selectedHero.availableSkillPoints--;
 	}
 
+	equipItem(item: Weapon|Armor) {
+		if (item instanceof Weapon) {
+			this.inventory.push(this.selectedHero.equippedWeapon);
+			this.selectedHero.equipNewWeapon(item);
+		} else if (item instanceof Armor) {
+			this.inventory.push(this.selectedHero.equippedArmor);
+			this.selectedHero.equipNewArmor(item);
+		}
+		this.inventory.splice(this.inventory.indexOf(item), 1);
+	}
+
 
 
 }
