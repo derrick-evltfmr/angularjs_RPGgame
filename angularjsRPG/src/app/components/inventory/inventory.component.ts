@@ -35,6 +35,12 @@ export class InventoryComponent {
 		this.showAvailableHeroesScreen = false;
 		this.isFighting = this.gameControllerService.isFighting;
 	}
+
+	closeInventory() {
+		this.inventoryIsOpen = false;
+	}
+
+
 }
 
 
