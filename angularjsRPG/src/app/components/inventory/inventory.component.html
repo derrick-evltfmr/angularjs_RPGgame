@@ -23,19 +23,19 @@
 						<h5>{{hero.name}} - {{hero.characterRole}} - level {{hero.level}}</h5>
 						<div class="row">
 							<div class="col skill d-flex flex-column">
-								<h6>ATK</h6>
+								<h6>ATK&nbsp;&nbsp;&nbsp;</h6>
 								<p>{{hero.skills.attack}}</p>
 							</div>
 							<div class="col skill d-flex flex-column">
-								<h6>SNK</h6>
+								<h6>SNK&nbsp;&nbsp;&nbsp;</h6>
 								<p>{{hero.skills.sneak}}</p>
 							</div>
 							<div class="col skill d-flex flex-column">
-								<h6>PERS</h6>
+								<h6>PERS&nbsp;</h6>
 								<p>{{hero.skills.persuade}}</p>
 							</div>
 							<div class="col skill d-flex flex-column">
-								<h6>INT</h6>
+								<h6>INT&nbsp;&nbsp;</h6>
 								<p>{{hero.skills.intelligence}}</p>
 							</div>
 						</div>
@@ -47,22 +47,22 @@
 						<img [src]="selectedHero.spriteUrl" [alt]="selectedHero.name" class="img-fluid mb-3" />
 						<h5>{{selectedHero.name}} - {{selectedHero.characterRole}} - level {{selectedHero.level}}</h5>
 						<div class="row">
-							<h6>ATK</h6>
+							<h6>ATK&nbsp;&nbsp;&nbsp;</h6>
 							<p>{{selectedHero.skills.attack}}</p>
 							<p *ngIf="selectedHero.availableSkillPoints" class="improve-skill" (click)="improveSkill(_characterSkills.attack)"><i class="fa fa-plus"></i></p>
 						</div>
 						<div class="row">
-							<h6>SNK</h6>
+							<h6>SNK&nbsp;&nbsp;&nbsp;</h6>
 							<p>{{selectedHero.skills.sneak}}</p>
 							<p *ngIf="selectedHero.availableSkillPoints" class="improve-skill" (click)="improveSkill(_characterSkills.sneak)"><i class="fa fa-plus"></i></p>
 						</div>
 						<div class="row">
-							<h6>PERS</h6>
+							<h6>PERS&nbsp;</h6>
 							<p>{{selectedHero.skills.persuade}}</p>
 							<p *ngIf="selectedHero.availableSkillPoints" class="improve-skill" (click)="improveSkill(_characterSkills.persuade)"><i class="fa fa-plus"></i></p>
 						</div>
 						<div class="row">
-							<h6>ATK</h6>
+							<h6>INT&nbsp;&nbsp;&nbsp;</h6>
 							<p>{{selectedHero.skills.intelligence}}</p>
 							<p *ngIf="selectedHero.availableSkillPoints" class="improve-skill" (click)="improveSkill(_characterSkills.intelligence)"><i class="fa fa-plus"></i></p>
 						</div>
