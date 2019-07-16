@@ -47,6 +47,13 @@ export class InventoryComponent {
 		}
 	}
 
+	improveSkill(skill: CharacterSkills) {
+		this.selectedHero.skills[skill]++;
+		this.selectedHero.availableSkillPoints--;
+	}
+
+
+
 }
 
 
