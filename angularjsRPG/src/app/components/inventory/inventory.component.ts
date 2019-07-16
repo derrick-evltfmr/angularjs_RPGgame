@@ -25,6 +25,16 @@ export class InventoryComponent {
 	selectedHero: Hero = this.heroParty[0];
 	showAvailableHeroesScreen: boolean = false;
 	isFighting: boolean = this.gameControllerService.isFighting;
+
+	openInventory() {
+		this.inventoryIsOpen = true;
+		this.heroParty = this.gameControllerService.heroParty;
+		this.availableHeroes = this.gameControllerService.availableHeroes;
+		this.inventory = this.gameControllerService.partyInventory;
+		this.selectedHero = this.heroParty[0];
+		this.showAvailableHeroesScreen = false;
+		this.isFighting = this.gameControllerService.isFighting;
+	}
 }
 
 
