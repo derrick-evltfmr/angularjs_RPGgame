@@ -73,6 +73,12 @@ export class InventoryComponent {
 		this.selectedHero = undefined;
 		this.showAvailableHeroesScreen = true;
 	}
+
+	addHeroToParty(hero: Hero){
+		this.heroParty.push(hero);
+		this.availableHeroes.splice(this.availableHeroes.indexOf(hero), 1);
+		this.setSelectedHero(hero);
+	}
 }
 
 
