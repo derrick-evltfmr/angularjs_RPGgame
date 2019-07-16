@@ -40,6 +40,12 @@ export class InventoryComponent {
 		this.inventoryIsOpen = false;
 	}
 
+	setSelectedHero(newHero: Hero) {
+		this.showAvailableHeroesScreen = false;
+		if (this.selectedHero !== newHero) {
+			this.selectedHero = newHero;
+		}
+	}
 
 }
 
