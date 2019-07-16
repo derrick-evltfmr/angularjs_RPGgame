@@ -69,7 +69,10 @@ export class InventoryComponent {
 		this.selectedHero = this.mainCharacter;
 	}
 
-
+	showAvailableHeroes() {
+		this.selectedHero = undefined;
+		this.showAvailableHeroesScreen = true;
+	}
 }
 
 
