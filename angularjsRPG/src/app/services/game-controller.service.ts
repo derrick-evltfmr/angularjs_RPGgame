@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Hero, Weapon, Armor, Monster, Warrior, Ranger, Rogue, Priest, checkRace, ExperienceToLevel } from '../models/characters';
+import { Hero, Weapon, Armor, Monster, Warrior, Ranger, Rogue, Priest, checkCamp, ExperienceToLevel } from '../models/characters';
 import { Chapter, SuccessOptions } from '../models/chapter';
 import { Chapter1 } from '../chapters/Chapter1';
-import { RaceOptions, GenderOptions, ClassOptions } from '../models/character-options';
+import { CampOptions, GenderOptions, ClassOptions } from '../models/character-options';
 
 @Injectable()
 export class GameControllerService {
@@ -28,25 +28,25 @@ export class GameControllerService {
 	setMainCharacter(character) {
 		switch (character.class) {
 			case ClassOptions.warrior:
-				this.mainCharacter = new Warrior(character.name, character.gender, character.race, 1, 10,
+				this.mainCharacter = new Warrior(character.name, character.gender, character.camp, 1, 10,
 					{attack: 0, sneak: 0, persuade: 0, intelligence: 0}, new Weapon("Wooden Sword", 1, 3), new Armor("Basic Clothes", 0));
 				break;
 			case ClassOptions.ranger:
-				this.mainCharacter = new Ranger(character.name, character.gender, character.race, 1, 10,
+				this.mainCharacter = new Ranger(character.name, character.gender, character.camp, 1, 10,
 					{attack: 0, sneak: 0, persuade: 0, intelligence: 0}, new Weapon("Wooden Bow", 1, 3), new Armor("Basic Clothes", 0));
 				break;
 			case ClassOptions.rogue:
-				this.mainCharacter = new Rogue(character.name, character.gender, character.race, 1, 10,
+				this.mainCharacter = new Rogue(character.name, character.gender, character.camp, 1, 10,
 					{attack: 0, sneak: 0, persuade: 0, intelligence: 0}, new Weapon("Wooden Dagger", 1, 3), new Armor("Basic Clothes", 0));
 				break;
 			case ClassOptions.priest:
-				this.mainCharacter = new Priest(character.name, character.gender, character.race, 1, 10,
+				this.mainCharacter = new Priest(character.name, character.gender, character.camp, 1, 10,
 					{attack: 0, sneak: 0, persuade: 0, intelligence: 0}, new Weapon("Wooden Wand", 1, 3), new Armor("Basic Clothes", 0));
 				break;
 		}
 
 		// Keep in mind that in JavaScript, the objects are passed by reference, while other variable are passed by value
-		checkRace(this.mainCharacter);
+		checkCamp(this.mainCharacter);
 		this.heroParty.push(this.mainCharacter);
 		this.router.navigateByUrl('/story');		// move the user from the character creation page to the story page
 	}
@@ -167,35 +167,35 @@ export class GameControllerService {
 
 		switch (pickHeroId) {
 			case characterId.maleWarrior:
-				pickHero = new Warrior("Benjamin", GenderOptions.male, RaceOptions.human, 1, 10, {attack: 2, sneak: 1,
+				pickHero = new Warrior("Benjamin", GenderOptions.male, CampOptions.human, 1, 10, {attack: 2, sneak: 1,
 						persuade: 1, intelligence: 1}, new Weapon("Sword", 1, 4), new Armor("Clothes", 0));
 				break;
 			case characterId.femaleWarrior:
-				pickHero = new Warrior("Jessica", GenderOptions.female, RaceOptions.human, 1, 10, {attack: 2, sneak: 1,
+				pickHero = new Warrior("Jessica", GenderOptions.female, CampOptions.human, 1, 10, {attack: 2, sneak: 1,
 						persuade: 1, intelligence: 1}, new Weapon("Sword", 1, 4), new Armor("Clothes", 0));
 				break;
 			case characterId.maleRanger:
-				pickHero = new Ranger("Robin", GenderOptions.male, RaceOptions.elf, 1, 8, {attack: 1, sneak: 1,
+				pickHero = new Ranger("Robin", GenderOptions.male, CampOptions.elf, 1, 8, {attack: 1, sneak: 1,
 						persuade: 2, intelligence: 1}, new Weapon("Bow", 1, 4), new Armor("Clothes", 0));
 				break;
 			case characterId.femaleRanger:
-				pickHero = new Ranger("Iris", GenderOptions.female, RaceOptions.elf, 1, 8, {attack: 1, sneak: 1,
+				pickHero = new Ranger("Iris", GenderOptions.female, CampOptions.elf, 1, 8, {attack: 1, sneak: 1,
 						persuade: 2, intelligence: 1}, new Weapon("Bow", 1, 4), new Armor("Clothes", 0));
 				break;
 			case characterId.maleRogue:
-				pickHero = new Rogue("Sheen", GenderOptions.male, RaceOptions.dwarf, 1, 8, {attack: 1, sneak: 2,
+				pickHero = new Rogue("Sheen", GenderOptions.male, CampOptions.dwarf, 1, 8, {attack: 1, sneak: 2,
 						persuade: 1, intelligence: 1}, new Weapon("Dagger", 1, 4), new Armor("Clothes", 0));
 				break;
 			case characterId.femaleRogue:
-				pickHero = new Rogue("Katherina", GenderOptions.female, RaceOptions.dwarf, 1, 8, {attack: 1, sneak: 2,
+				pickHero = new Rogue("Katherina", GenderOptions.female, CampOptions.dwarf, 1, 8, {attack: 1, sneak: 2,
 						persuade: 1, intelligence: 1}, new Weapon("Dagger", 1, 4), new Armor("Clothes", 0));
 				break;
 			case characterId.malePriest:
-				pickHero = new Ranger("John", GenderOptions.male, RaceOptions.halfling, 1, 6, {attack: 1, sneak: 1,
+				pickHero = new Ranger("John", GenderOptions.male, CampOptions.halfling, 1, 6, {attack: 1, sneak: 1,
 						persuade: 1, intelligence: 2}, new Weapon("Wand", 1, 4), new Armor("Clothes", 0));
 				break;
 			case characterId.femaleRanger:
-				pickHero = new Ranger("Elizabeth", GenderOptions.female, RaceOptions.halfling, 1, 6, {attack: 1, sneak: 1,
+				pickHero = new Ranger("Elizabeth", GenderOptions.female, CampOptions.halfling, 1, 6, {attack: 1, sneak: 1,
 						persuade: 1, intelligence: 2}, new Weapon("Wand", 1, 4), new Armor("Clothes", 0));
 				break;
 		}
