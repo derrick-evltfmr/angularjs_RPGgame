@@ -12,7 +12,7 @@ export class CharacterCreationComponent{
 	constructor(private gameControllerService: GameControllerService) {}
 
 	character = {                           // set up some properties for character
-		race: '--Choose--',                   // set the default to some string
+		camp: '--Choose--',                   // set the default to some string
 		class: '--Choose--',
 		gender: undefined,                    // it's ok to set undefined because they are button
 		name: undefined                       // not displaying anything
@@ -21,13 +21,13 @@ export class CharacterCreationComponent{
 	characterComplete: boolean = false;     // set a characterComplete flag
 																					// typescript boolean
 
-	races = CharacterOptions.races;
+	camps = CharacterOptions.camps;
 	classes = CharacterOptions.classes;
 	genders = CharacterOptions.genders;
 
 
-	changeRace(race: string) {
-		this.character.race = race;
+	changeCamp(camp: string) {
+		this.character.camp = camp;
 		this.checkCompleted();
 	}
 
@@ -46,7 +46,7 @@ export class CharacterCreationComponent{
 	}
 
 	checkCompleted(){
-		this.characterComplete = this.character.race !== "--Choose--"	// if these conditions are all True(1), then 1, because of logical and
+		this.characterComplete = this.character.camp !== "--Choose--"	// if these conditions are all True(1), then 1, because of logical and
 			&& this.character.class !== "--Choose--"
 			&& this.character.gender !== undefined
 			&& this.character.name;										// this equals to true, not undefined(false value)
