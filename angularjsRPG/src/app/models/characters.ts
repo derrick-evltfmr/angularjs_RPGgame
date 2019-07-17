@@ -1,4 +1,4 @@
-import { RaceOptions, ClassOptions, GenderOptions } from './character-options';
+import { CampOptions, ClassOptions, GenderOptions } from './character-options';
 
 export class Armor {
 		name: string;
@@ -123,7 +123,7 @@ export class Monster extends BaseCharacter {
 }
 export class Hero extends BaseCharacter {
 	gender: string;
-	race: string;
+	camp: string;
 	characterRole: string;
 	experience: number;
 	level: number;
@@ -132,11 +132,11 @@ export class Hero extends BaseCharacter {
 	hasDamagingTrap: boolean;
 	turnsUntilSpecialAvailableAgain: number;
 
-	constructor(name, gender, race, level, health, skills, weapon, armor){
+	constructor(name, gender, camp, level, health, skills, weapon, armor){
 		super(name, health, skills);
 
 		this.gender = gender;
-		this.race = race;
+		this.camp = camp;
 		this.experience = 0;
 		this.level = level;
 		this.equippedWeapon = weapon;
@@ -174,8 +174,8 @@ export class Hero extends BaseCharacter {
 }
 
 export class Warrior extends Hero {
-	constructor(name, gender, race, level, health, skills, weapon, armor){
-		super(name, gender, race, level, health, skills, weapon, armor);
+	constructor(name, gender, camp, level, health, skills, weapon, armor){
+		super(name, gender, camp, level, health, skills, weapon, armor);
 
 		this.characterRole = ClassOptions.warrior;
 		this.skills.attack += 2;
@@ -195,8 +195,8 @@ export class Warrior extends Hero {
 }
 
 export class Ranger extends Hero {
-	constructor(name, gender, race, level, health, skills, weapon, armor){
-		super(name, gender, race, level, health, skills, weapon, armor);
+	constructor(name, gender, camp, level, health, skills, weapon, armor){
+		super(name, gender, camp, level, health, skills, weapon, armor);
 
 		this.characterRole = ClassOptions.ranger;
 		this.skills.attack--;
@@ -214,8 +214,8 @@ export class Ranger extends Hero {
 }
 
 export class Rogue extends Hero {
-	constructor(name, gender, race, level, health, skills, weapon, armor){
-		super(name, gender, race, level, health, skills, weapon, armor);
+	constructor(name, gender, camp, level, health, skills, weapon, armor){
+		super(name, gender, camp, level, health, skills, weapon, armor);
 
 		this.characterRole = ClassOptions.rogue;
 		this.skills.attack++;
@@ -233,8 +233,8 @@ export class Rogue extends Hero {
 }
 
 export class Priest extends Hero {
-	constructor(name, gender, race, level, health, skills, weapon, armor){
-		super(name, gender, race, level, health, skills, weapon, armor);
+	constructor(name, gender, camp, level, health, skills, weapon, armor){
+		super(name, gender, camp, level, health, skills, weapon, armor);
 
 		this.characterRole = ClassOptions.priest;
 		this.skills.attack--;
@@ -251,24 +251,24 @@ export class Priest extends Hero {
 	}
 }
 
-export const checkRace = (hero: Hero) => {
-	switch (hero.race) {
-		case RaceOptions.human:
+export const checkCamp = (hero: Hero) => {
+	switch (hero.camp) {
+		case CampOptions.human:
 			hero.skills.persuade += 2;
 			hero.skills.intelligence++;
 			hero.skills.sneak -= 2;
 			break;
-		case RaceOptions.elf:
+		case CampOptions.elf:
 			hero.skills.attack += 2;
 			hero.skills.sneak ++;
 			hero.skills.persuade -= 2;
 			break;
-		case RaceOptions.dwarf:
+		case CampOptions.dwarf:
 			hero.skills.attack += 2;
 			hero.skills.persuade++;
 			hero.skills.intelligence -= 2;
 			break;
-		case RaceOptions.halfling:
+		case CampOptions.halfling:
 			hero.skills.sneak += 2;
 			hero.skills.attack++;
 			hero.skills.persuade -= 2;
