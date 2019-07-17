@@ -167,35 +167,35 @@ export class GameControllerService {
 
 		switch (pickHeroId) {
 			case characterId.maleWarrior:
-				pickHero = new Warrior("Benjamin", GenderOptions.male, CampOptions.human, 1, 10, {attack: 2, sneak: 1,
+				pickHero = new Warrior("Benjamin", GenderOptions.male, CampOptions.dexterityCountry, 1, 10, {attack: 2, sneak: 1,
 						persuade: 1, intelligence: 1}, new Weapon("Sword", 1, 4), new Armor("Clothes", 0));
 				break;
 			case characterId.femaleWarrior:
-				pickHero = new Warrior("Jessica", GenderOptions.female, CampOptions.human, 1, 10, {attack: 2, sneak: 1,
+				pickHero = new Warrior("Jessica", GenderOptions.female, CampOptions.dexterityCountry, 1, 10, {attack: 2, sneak: 1,
 						persuade: 1, intelligence: 1}, new Weapon("Sword", 1, 4), new Armor("Clothes", 0));
 				break;
 			case characterId.maleRanger:
-				pickHero = new Ranger("Robin", GenderOptions.male, CampOptions.elf, 1, 8, {attack: 1, sneak: 1,
+				pickHero = new Ranger("Robin", GenderOptions.male, CampOptions.dexterityCountry, 1, 8, {attack: 1, sneak: 1,
 						persuade: 2, intelligence: 1}, new Weapon("Bow", 1, 4), new Armor("Clothes", 0));
 				break;
 			case characterId.femaleRanger:
-				pickHero = new Ranger("Iris", GenderOptions.female, CampOptions.elf, 1, 8, {attack: 1, sneak: 1,
+				pickHero = new Ranger("Iris", GenderOptions.female, CampOptions.dexterityCountry, 1, 8, {attack: 1, sneak: 1,
 						persuade: 2, intelligence: 1}, new Weapon("Bow", 1, 4), new Armor("Clothes", 0));
 				break;
 			case characterId.maleRogue:
-				pickHero = new Rogue("Sheen", GenderOptions.male, CampOptions.dwarf, 1, 8, {attack: 1, sneak: 2,
+				pickHero = new Rogue("Sheen", GenderOptions.male, CampOptions.agileCountry, 1, 8, {attack: 1, sneak: 2,
 						persuade: 1, intelligence: 1}, new Weapon("Dagger", 1, 4), new Armor("Clothes", 0));
 				break;
 			case characterId.femaleRogue:
-				pickHero = new Rogue("Katherina", GenderOptions.female, CampOptions.dwarf, 1, 8, {attack: 1, sneak: 2,
+				pickHero = new Rogue("Katherina", GenderOptions.female, CampOptions.agileCountry, 1, 8, {attack: 1, sneak: 2,
 						persuade: 1, intelligence: 1}, new Weapon("Dagger", 1, 4), new Armor("Clothes", 0));
 				break;
 			case characterId.malePriest:
-				pickHero = new Ranger("John", GenderOptions.male, CampOptions.halfling, 1, 6, {attack: 1, sneak: 1,
+				pickHero = new Priest("John", GenderOptions.male, CampOptions.wiseCountry, 1, 6, {attack: 1, sneak: 1,
 						persuade: 1, intelligence: 2}, new Weapon("Wand", 1, 4), new Armor("Clothes", 0));
 				break;
 			case characterId.femaleRanger:
-				pickHero = new Ranger("Elizabeth", GenderOptions.female, CampOptions.halfling, 1, 6, {attack: 1, sneak: 1,
+				pickHero = new Priest("Elizabeth", GenderOptions.female, CampOptions.wiseCountry, 1, 6, {attack: 1, sneak: 1,
 						persuade: 1, intelligence: 2}, new Weapon("Wand", 1, 4), new Armor("Clothes", 0));
 				break;
 		}
