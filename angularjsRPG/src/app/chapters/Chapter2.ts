@@ -2,12 +2,13 @@ import { Chapter, CharacterAction, FailureOptions, SuccessOptions } from "../mod
 import { Weapon, Armor, Monster, Warrior, Ranger, Rogue, Priest } from '../models/characters';
 import { GenderOptions, CampOptions, ClassOptions } from "../models/character-options";
 
-export const Chapter1: Chapter = {
+export const Chapter2: Chapter = {
 	story: [
-		`You enter the woods, chasing after the goblin who stole your father's sword.`,
-		`You lose sight of them in the thick woods and begin to creep forward,`,
-		`relying on your ears to warm you of danger and hopefully to locate the theiving goblins.`,
-		`Shenanigans ensue and an encounter begins. Now the question is: How do you want to handle it (approach this enocunter)?`
+		`A Rogue just passed by saw that how you fight with the goblin`,
+		`He rushed to the front of you and he's super interested in your style of fighting,`,
+		`He said his name is Kenneth and said now he's your teammate and will go on adventure with you (Unilaterally)`,
+		`You don't know what to do with him, but it seems that he's a nice guy, and indeed you're very happy to have him with you.`,
+		`Meanwhile, `
 	],
 
 	options: [
@@ -17,8 +18,12 @@ export const Chapter1: Chapter = {
 	],
 
 	enemyParty: [
-		new Monster("Goblin", 5, {attack: 2, sneak: 0, persuade: 0}, {attack: 7, sneak: 7, persuade: 7}, 1, 3, "../../assets/goblin.png")
+		new Monster("Flower Mosnter", 7, {attack: 1, sneak: 2, persuade: 1}, {attack: 7, sneak: 7, persuade: 7}, 3, 7,
+			"../../assets/flowermonster.png"),
 					// (name, health, skills, barriers, minDamage, maxDamage, spriteUrl)
+		new Monster("Treeant", 15, {attack: 10, sneak: 5, persuade: 8}, {attack: 12, sneak: 12, persuade: 12}, 5, 15, "../../assets/treeant.png"),
+		new Monster("Mushroom Monster", 7, {attack: 1, sneak: 1, persuade: 2}, {attack: 7, sneak: 7, persuade: 7}, 3, 7,
+			"../../assets/mushroommonster.png")
 	],
 
 	sneakPersuadeFail: CharacterAction.attack,
