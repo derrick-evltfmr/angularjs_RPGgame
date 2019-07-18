@@ -6,7 +6,7 @@ export const Chapter2: Chapter = {
 	story: [
 		`A Rogue just passed by saw that how you fight with the goblin`,
 		`He rushed to the front of you and he's super interested in your style of fighting,`,
-		`He said his name is Kenneth and said now he's your teammate and will go on adventure with you (Unilaterally)`,
+		`He said his name was Sheen and said now he's your teammate and will go on adventure with you (Unilaterally)`,
 		`You don't know what to do with him, but it seems that he's a nice guy, and indeed you're very happy to have him with you.`,
 		`Meanwhile, the plants around you become a bit weird. You couldn't tell what's going wrong, `,
 		`but the astmosphere is really strange. Kenneth found that the plants are moving!!`,
@@ -40,9 +40,9 @@ export const Chapter2: Chapter = {
 	],
 
 	rewards: {
-		experience: 3000,
-		equipment: [new Weapon("Rusty Sword", 2, 6)],
-		newHero: new Rogue("Kenneth", GenderOptions.male, CampOptions.dwarf, 1, 8, {attack: 1, sneak: 2,
+		experience: 7000,
+		equipment: [new Weapon("Alloy Steel Sword", 2, 6), new Armor("Leather Armor", 8)],
+		newHero: new Priest("Kenneth", GenderOptions.male, CampOptions.dwarf, 1, 8, {attack: 1, sneak: 2,
 			persuade: 1, intelligence: 1}, new Weapon("Dagger", 1, 4), new Armor("Clothes", 0))
 
 	},
