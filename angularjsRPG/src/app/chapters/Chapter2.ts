@@ -24,7 +24,7 @@ export const Chapter2: Chapter = {
 		new Monster("Flower Mosnter", 7, {attack: 1, sneak: 2, persuade: 1}, {attack: 7, sneak: 7, persuade: 7}, 3, 7,
 			"../../assets/flowermonster.png"),
 					// (name, health, skills, barriers, minDamage, maxDamage, spriteUrl)
-		new Monster("Treeant", 15, {attack: 10, sneak: 5, persuade: 8}, {attack: 12, sneak: 12, persuade: 12}, 5, 15, "../../assets/treeant.png"),
+		new Monster("Treeant", 15, {attack: 7, sneak: 5, persuade: 8}, {attack: 10, sneak: 10, persuade: 10}, 5, 10, "../../assets/treeant.png"),
 		new Monster("Mushroom Monster", 7, {attack: 1, sneak: 1, persuade: 2}, {attack: 7, sneak: 7, persuade: 7}, 3, 7,
 			"../../assets/mushroommonster.png")
 	],
