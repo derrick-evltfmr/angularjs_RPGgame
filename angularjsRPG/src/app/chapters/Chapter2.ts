@@ -9,7 +9,7 @@ export const Chapter2: Chapter = {
 		`He said his name was Sheen and said now he's your teammate and will go on adventure with you (Unilaterally)`,
 		`You don't know what to do with him, but it seems that he's a nice guy, and indeed you're very happy to have him with you.`,
 		`Meanwhile, the plants around you become a bit weird. You couldn't tell what's going wrong, `,
-		`but the astmosphere is really strange. Kenneth found that the plants are moving!!`,
+		`but the astmosphere is really strange. Sheen finds that the plants are moving!!`,
 		`You realize that the flower, tree and mushroom in front of you guys are indeed living creatures, they are monster in the forest`,
 		`How do you want to handle it?`
 	],
@@ -42,8 +42,8 @@ export const Chapter2: Chapter = {
 	rewards: {
 		experience: 7000,
 		equipment: [new Weapon("Alloy Steel Sword", 2, 6), new Armor("Leather Armor", 8)],
-		newHero: new Priest("Kenneth", GenderOptions.male, CampOptions.dwarf, 1, 8, {attack: 1, sneak: 2,
-			persuade: 1, intelligence: 1}, new Weapon("Dagger", 1, 4), new Armor("Clothes", 0))
+		newHero: new Priest("Elizabeth", GenderOptions.female, CampOptions.wiseCountry, 5, 28, {attack: 5, sneak: 8,
+			persuade: 12, intelligence: 15}, new Weapon("Wand", 3, 10), new Armor("Elegant Clothes", 5))
 
 	},
 
