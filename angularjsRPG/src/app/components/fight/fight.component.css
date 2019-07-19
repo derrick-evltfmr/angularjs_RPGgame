@@ -69,3 +69,13 @@
 .row-empty {
 	height:10%;
 }
+
+.dark-overlay {
+	background: rgba(85, 218, 211, 0.35);
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 200%;
+	width: 100%;
+	z-index: -1;	/* show above anything else */
+}
