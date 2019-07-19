@@ -32,12 +32,12 @@
 }
 
 .health-bar {
-	height: 20px;
+	height: 25px;
 }
 
 .progress-bar {
 	color: black;
-	background-color: red;
+	background-color: greenyellow;
 	padding: 7px 0;
 }
 
@@ -62,7 +62,7 @@
 }
 
 .action-option.selected {
-	background-color: rgb(0,0,150);
+	background-color: rgb(228, 217, 121);
 	color: white;
 }
 
