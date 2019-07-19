@@ -156,6 +156,12 @@ export class FightComponent{
 		if (!(target instanceof Monster)) {
 			this.displayMessage = `Only enemies can be targeted for a warrior's special attack.`;
 			return;
+		}
+
+		this.selectedTargets.push(target);
+
+		if (this.selectedTargets.length < 2) {
+			this.displayMessage = `Select a second target for your warrior's special attack.`;
 		} else if (this.currentCharacter instanceof Hero) {
 			this.freezeActions = true;
 			this.currentCharacter.turnsUntilSpecialAvailableAgain = this.turnsBetweenSpecial;
@@ -167,7 +173,7 @@ export class FightComponent{
 				let damage = this.currentCharacter.dealDamage();
 				firstTarget.currentHealth -= damage;
 				this.displayMessage = `${this.currentCharacter.name} hit ${firstTarget.name} dealing ${damage} damage.`;
-				if (firstTarget.currentHealth <= 0){
+				if (firstTarget.currentHealth <= 0) {
 					firstTarget.isIncapacitated = true;
 					this.enemiesIncapacitated++;
 				}
