@@ -141,12 +141,18 @@ export class Hero extends BaseCharacter {
 		this.level = level;
 		this.equippedWeapon = weapon;
 		this.equipNewArmor(armor);
+
+		// add basic character skill points up 5, so that the initial status is not too low
+		this.skills.attack += 5;
+		this.skills.sneak += 5;
+		this.skills.persuade += 5;
+		this.skills.intelligence += 5;
 	}
 
 	levelUp(): void {
 		this.experience -= ExperienceToLevel[this.level];	// index, so [] not ()
 		this.level++;
-		this.availableSkillPoints += 10;
+		this.availableSkillPoints += 8;
 		if (this.experience >= ExperienceToLevel[this.level]) {
 			this.levelUp();
 		}
