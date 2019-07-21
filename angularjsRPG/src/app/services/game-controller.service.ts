@@ -194,7 +194,7 @@ export class GameControllerService {
 				pickHero = new Priest("John", GenderOptions.male, CampOptions.wiseCountry, 1, 6, {attack: 1, sneak: 1,
 						persuade: 1, intelligence: 2}, new Weapon("Wand", 1, 4), new Armor("Clothes", 0));
 				break;
-			case characterId.femaleRanger:
+			case characterId.femalePriest:
 				pickHero = new Priest("Elizabeth", GenderOptions.female, CampOptions.wiseCountry, 1, 6, {attack: 1, sneak: 1,
 						persuade: 1, intelligence: 2}, new Weapon("Wand", 1, 4), new Armor("Clothes", 0));
 				break;

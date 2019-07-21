@@ -35,8 +35,8 @@ export const Chapter1: Chapter = {
 	rewards: {
 		experience: 3000,
 		equipment: [new Weapon("Father's Rusty Sword", 2, 6)],
-		newHero: new Rogue("Sheen", GenderOptions.male, CampOptions.strengthCountry, 3, 24, {attack: 8, sneak: 10,
-			persuade: 5, intelligence: 1}, new Weapon("Dagger", 2, 5), new Armor("Casual Clothes", 2))
+		newHero: [new Rogue("Sheen", GenderOptions.male, CampOptions.strengthCountry, 3, 24, {attack: 8, sneak: 10,
+			persuade: 5, intelligence: 1}, new Weapon("Dagger", 2, 5), new Armor("Casual Clothes", 2))]
 
 	},
 

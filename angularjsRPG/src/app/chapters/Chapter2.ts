@@ -1,6 +1,7 @@
 import { Chapter, CharacterAction, FailureOptions, SuccessOptions } from "../models/chapter";
 import { Weapon, Armor, Monster, Warrior, Ranger, Rogue, Priest } from '../models/characters';
 import { GenderOptions, CampOptions, ClassOptions } from "../models/character-options";
+import { Chapter3 } from './Chapter3';
 
 export const Chapter2: Chapter = {
 	story: [
@@ -42,11 +43,11 @@ export const Chapter2: Chapter = {
 	rewards: {
 		experience: 7000,
 		equipment: [new Weapon("Alloy Steel Sword", 2, 6), new Armor("Leather Armor", 8)],
-		newHero: new Priest("Elizabeth", GenderOptions.female, CampOptions.wiseCountry, 5, 28, {attack: 5, sneak: 8,
-			persuade: 12, intelligence: 15}, new Weapon("Wand", 3, 10), new Armor("Elegant Clothes", 5))
+		newHero: [new Priest("Elizabeth", GenderOptions.female, CampOptions.wiseCountry, 5, 28, {attack: 5, sneak: 8,
+			persuade: 12, intelligence: 15}, new Weapon("Wand", 3, 10), new Armor("Elegant Clothes", 5))]
 
 	},
 
-	nextChapter: null   // if there's a Chapter 2, put Chapter 2
+	nextChapter: Chapter3   // if there's a Chapter 2, put Chapter 2
 };
 

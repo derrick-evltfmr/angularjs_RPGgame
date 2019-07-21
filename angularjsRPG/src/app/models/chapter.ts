@@ -28,7 +28,7 @@ export class Chapter {
 	rewards: {
 		experience: number,
 		equipment: (Weapon | Armor) [],		// array of Weapon or Armor
-		newHero: Hero;
+		newHero: Hero[];
 	};
 	nextChapter: Chapter;
 }
