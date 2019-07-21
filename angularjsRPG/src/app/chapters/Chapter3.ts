@@ -12,6 +12,9 @@ export const Chapter3: Chapter = {
 		`Elizabeth told you that you are the braver that can save the Kingdom because you have some special potential power`,
 		`She told you that there're so many monster appearing around is because an evil wizard summon them out to destroy the Kingdom `,
 		`You say "Sure, I'll try my best to make the Kingdom become peaceful again!`,
+		` `,
+		`You arrive at an unknown ruin, suddenly the ground is shaking, you hear people screaming inside the ruin`,
+		`When you try to go to where the sounds were from, you block by two living statues`,
 		`How do you want to handle it?`
 	],
 
@@ -40,8 +43,8 @@ export const Chapter3: Chapter = {
 	],
 
 	rewards: {
-		experience: 7000,
-		equipment: [new Weapon("Alloy Steel Sword", 2, 6), new Armor("Leather Armor", 8)],
+		experience: 5000,
+		equipment: [new Weapon("Ancient Wand", 5, 12), new Armor("Stone Armor", 12)],
 		newHero: new Priest("Elizabeth", GenderOptions.female, CampOptions.wiseCountry, 5, 28, {attack: 5, sneak: 8,
 			persuade: 12, intelligence: 15}, new Weapon("Wand", 3, 10), new Armor("Elegant Clothes", 5))
 
