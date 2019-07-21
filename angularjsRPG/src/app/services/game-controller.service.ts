@@ -4,6 +4,7 @@ import { Hero, Weapon, Armor, Monster, Warrior, Ranger, Rogue, Priest, checkCamp
 import { Chapter, SuccessOptions } from '../models/chapter';
 import { Chapter1 } from '../chapters/Chapter1';
 import { CampOptions, GenderOptions, ClassOptions } from '../models/character-options';
+import { range } from 'rxjs';
 
 @Injectable()
 export class GameControllerService {
@@ -78,13 +79,15 @@ export class GameControllerService {
 					});
 					break;
 				case SuccessOptions.addHeroToParty:
-					let newHero: Hero = this.currentChapter.rewards.newHero;
-					if (this.heroParty.length < 3 ) {
-						messages.push(`A new hero joined your party! ${newHero.name} - ${newHero.characterRole} - level ${newHero.level}`);
-						this.heroParty.push(newHero);
-					} else {
-						messages.push(`A new hero is available to join your party! ${newHero.name} - ${newHero.characterRole} - level ${newHero.level}`);
-						this.availableHeroes.push(newHero);
+					let newHeros: Hero[] = this.currentChapter.rewards.newHero;
+					for (let newHero of newHeros) {
+						if (this.heroParty.length < 3 ) {
+							messages.push(`A new hero joined your party! ${newHero.name} - ${newHero.characterRole} - level ${newHero.level}`);
+							this.heroParty.push(newHero);
+						} else {
+							messages.push(`A new hero is available to join your party! ${newHero.name} - ${newHero.characterRole} - level ${newHero.level}`);
+							this.availableHeroes.push(newHero);
+						}
 					}
 					break;
 			}
