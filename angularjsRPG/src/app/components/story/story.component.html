@@ -5,6 +5,7 @@
 			<p class="text-white col-12" *ngFor="let paragraph of currentChapter.story">
 				{{paragraph}}
 			</p>
+			<div class="row-empty"></div>
 			<div class="m-3">
 				<button *ngFor="let option of currentChapter.options" class="btn encounter-option mr-3" (click)="chooseAction(option)">
 					{{option}}
