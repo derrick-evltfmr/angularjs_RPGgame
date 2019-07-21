@@ -438,6 +438,9 @@ export class FightComponent{
 	nextChapter() {
 		this.gameControllerService.nextChapter();
 		this.router.navigateByUrl("/story");
+
+		this.enemiesIncapacitated = 0;
+		this.heroesIncapacitated = 0;
 	}
 
 	gameOver() {
