@@ -25,9 +25,9 @@ export const Chapter3: Chapter = {
 	],
 
 	enemyParty: [
-		new Monster("Stone Monster", 20, {attack: 12, sneak: 12, persuade: 12}, {attack: 10, sneak: 10, persuade: 10}, 7, 12,
+		new Monster("Stone Monster", 50, {attack: 12, sneak: 12, persuade: 12}, {attack: 10, sneak: 10, persuade: 10}, 7, 12,
 			"../../assets/stonemonster.png"),
-		new Monster("Brick Monster", 20, {attack: 12, sneak: 12, persuade: 12}, {attack: 10, sneak: 10, persuade: 10}, 7, 12,
+		new Monster("Brick Monster", 50, {attack: 12, sneak: 12, persuade: 12}, {attack: 10, sneak: 10, persuade: 10}, 7, 12,
 			"../../assets/brickmonster.png")
 							// (name, health, skills, barriers, minDamage, maxDamage, spriteUrl)
 	],
