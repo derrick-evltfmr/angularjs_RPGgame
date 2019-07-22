@@ -14,7 +14,7 @@ export class GameControllerService {
 	currentChapter: Chapter = Chapter1;
 
 	isFighting: boolean = false;
-	actionDelay: number = 1500;				// delay between each action (milliseconds)
+	actionDelay: number = 1000;				// delay between each action (milliseconds) original 1500ms
 
 	heroParty: Hero[] = [];					// set the empty array, when we start, we add the character to the array
 	partyInventory: (Weapon | Armor)[] = [];
