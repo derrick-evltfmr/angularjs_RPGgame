@@ -141,6 +141,7 @@ export class Hero extends BaseCharacter {
 		this.level = level;
 		this.equippedWeapon = weapon;
 		this.equipNewArmor(armor);
+		this.availableSkillPoints = 0;					// if not initialize to 0, then the game doesn't know what the type is the variable
 
 		// add basic character skill points up 5, so that the initial status is not too low
 		this.skills.attack += 5;

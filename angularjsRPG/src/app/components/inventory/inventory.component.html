@@ -49,26 +49,28 @@
 						<div class="row">
 							<h6>ATK&nbsp;&nbsp;&nbsp;</h6>
 							<p>{{selectedHero.skills.attack}}</p>
-							<p *ngIf="selectedHero.availableSkillPoints" class="improve-skill" (click)="improveSkill(_characterSkills.attack)"><i class="fas fa-plus"></i></p>
+							<p *ngIf="selectedHero.availableSkillPoints" class="improve-skill" (click)="improveSkill(_characterSkills.attack)"><i class="fa fa-plus"></i></p>
 						</div>
 						<div class="row">
 							<h6>SNK&nbsp;&nbsp;&nbsp;</h6>
 							<p>{{selectedHero.skills.sneak}}</p>
-							<p *ngIf="selectedHero.availableSkillPoints" class="improve-skill" (click)="improveSkill(_characterSkills.sneak)"><i class="fas fa-plus"></i></p>
+							<p *ngIf="selectedHero.availableSkillPoints" class="improve-skill" (click)="improveSkill(_characterSkills.sneak)"><i class="fa fa-plus"></i></p>
 						</div>
 						<div class="row">
 							<h6>PERS&nbsp;</h6>
 							<p>{{selectedHero.skills.persuade}}</p>
-							<p *ngIf="selectedHero.availableSkillPoints" class="improve-skill" (click)="improveSkill(_characterSkills.persuade)"><i class="fas fa-plus"></i></p>
+							<p *ngIf="selectedHero.availableSkillPoints" class="improve-skill" (click)="improveSkill(_characterSkills.persuade)"><i class="fa fa-plus"></i></p>
 						</div>
 						<div class="row">
 							<h6>INT&nbsp;&nbsp;&nbsp;</h6>
 							<p>{{selectedHero.skills.intelligence}}</p>
-							<p *ngIf="selectedHero.availableSkillPoints" class="improve-skill" (click)="improveSkill(_characterSkills.intelligence)"><i class="fas fa-plus"></i></p>
+							<p *ngIf="selectedHero.availableSkillPoints" class="improve-skill" (click)="improveSkill(_characterSkills.intelligence)"><i class="fa fa-plus"></i></p>
 						</div>
 					</div>
-					<h6 *ngIf="selectedHero.availableSkillPoints">Available Skill Points: {{selectedHero.availableSkillPoints}}</h6>
-					<h6 *ngIf="!selectedHero.availableSkillPoints">Experience: {{selectedHero.experience}}/{{_experienceToLevel[selectedHero.level]}}</h6>
+					<div>
+						<div class="row"><h6>Available Skill Points: {{selectedHero.availableSkillPoints}}</h6></div>
+						<div class="row"><h6>Experience: {{selectedHero.experience}}/{{_experienceToLevel[selectedHero.level]}}</h6></div>
+					</div>
 				</div>
 				<div class="col-4 p-3 text-center d-flex flex-column">
 					<h3 class="mb-5">Equipped Items</h3>
