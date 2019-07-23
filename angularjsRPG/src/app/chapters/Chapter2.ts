@@ -42,7 +42,7 @@ export const Chapter2: Chapter = {
 
 	rewards: {
 		experience: 7000,
-		equipment: [new Weapon("Alloy Steel Sword", 2, 6), new Armor("Leather Armor", 8)],
+		equipment: [new Weapon("Alloy Steel Sword", 5, 10), new Armor("Leather Armor", 8)],
 		newHero: [new Priest("Elizabeth", GenderOptions.female, CampOptions.wiseCountry, 5, 35, {attack: 10, sneak: 12,
 			persuade: 18, intelligence: 25}, new Weapon("Wand", 3, 10), new Armor("Elegant Clothes", 5))]
 

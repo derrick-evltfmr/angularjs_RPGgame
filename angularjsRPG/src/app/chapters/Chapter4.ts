@@ -1,9 +1,8 @@
 import { Chapter, CharacterAction, FailureOptions, SuccessOptions } from "../models/chapter";
 import { Weapon, Armor, Monster, Warrior, Ranger, Rogue, Priest } from '../models/characters';
 import { GenderOptions, CampOptions, ClassOptions } from "../models/character-options";
-import { Chapter4 } from './Chapter4';
 
-export const Chapter3: Chapter = {
+export const Chapter4: Chapter = {
 	story: [
 		`After you defeated the plant monsters, you found that there's a girl fainted on the ground`,
 		`you step forward to check if she's fine, she awakes and says she was attacked by the plant monsters`,
@@ -53,6 +52,6 @@ export const Chapter3: Chapter = {
 
 	},
 
-	nextChapter: Chapter4   // if there's a Chapter 2, put Chapter 2
+	nextChapter: null   // if there's a Chapter 2, put Chapter 2
 };
 
