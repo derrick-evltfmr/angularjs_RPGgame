@@ -4,14 +4,13 @@ import { GenderOptions, CampOptions, ClassOptions } from "../models/character-op
 
 export const Chapter4: Chapter = {
 	story: [
-		`After you defeated the plant monsters, you found that there's a girl fainted on the ground`,
-		`you step forward to check if she's fine, she awakes and says she was attacked by the plant monsters`,
-		`The plant monsters used the hypnotic powder to make her fall asleep. She's glad that Sheen and you defeated the plant mosnter`,
-		`In another words, you saved her, so she's grateful. Her name is Elizabeth and now she joins into your team`,
+		`You met Jessica and Iris during the fight with the brick monster and stone monster`,
+		`They are indeed skilled adventurers, but they are a bit timid when they meet the scary-looking monsters`,
+		`They thank that you helped them to defeat the monsters, so they say they can join into your team when you need them`,
 		` `,
-		`Elizabeth told you that you are the braver that can save the Kingdom because you have some special potential power`,
-		`She told you that there're so many monster appearing around is because an evil wizard summon them out to destroy the Kingdom `,
-		`You say "Sure, I'll try my best to make the Kingdom become peaceful again!`,
+		`You continue to explore the ruin, from the monsters you defeated just now, you can feel that the ruin `,
+		`has some relations with the evil wizard, because of the ominous magic power. `,
+		`You find a room that has many treasures, with some ancient weapons, which seem to be powerful`,
 		` `,
 		`You arrive at an unknown ruin, suddenly the ground is shaking, you hear people screaming inside the ruin`,
 		`When you try to go to where the sounds were from, you block by two living statues`,
@@ -25,10 +24,12 @@ export const Chapter4: Chapter = {
 	],
 
 	enemyParty: [
-		new Monster("Stone Monster", 50, {attack: 12, sneak: 12, persuade: 12}, {attack: 10, sneak: 10, persuade: 10}, 7, 12,
-			"../../assets/stonemonster.png"),
-		new Monster("Brick Monster", 50, {attack: 12, sneak: 12, persuade: 12}, {attack: 10, sneak: 10, persuade: 10}, 7, 12,
-			"../../assets/brickmonster.png")
+		new Monster("Treasure Monster (Red)", 60, {attack: 20, sneak: 20, persuade: 20}, {attack: 15, sneak: 15, persuade: 15}, 9, 14,
+			"../../assets/redtreasuremon.png"),
+		new Monster("Treasure Monster (Black)", 50, {attack: 20, sneak: 20, persuade: 20}, {attack: 15, sneak: 15, persuade: 15}, 12, 18,
+			"../../assets/blacktreasuremon.png"),
+		new Monster("Treasure Monster (Blue)", 60, {attack: 20, sneak: 20, persuade: 20}, {attack: 15, sneak: 15, persuade: 15}, 9, 14,
+			"../../assets/bluetreasuremon.png")
 							// (name, health, skills, barriers, minDamage, maxDamage, spriteUrl)
 	],
 
