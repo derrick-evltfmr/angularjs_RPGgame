@@ -12,8 +12,8 @@ export const Chapter4: Chapter = {
 		`has some relations with the evil wizard, because of the ominous magic power. `,
 		`You find a room that has many treasures, with some ancient weapons, which seem to be powerful`,
 		` `,
-		`You arrive at an unknown ruin, suddenly the ground is shaking, you hear people screaming inside the ruin`,
-		`When you try to go to where the sounds were from, you block by two living statues`,
+		`However, taking away the treasures from the ruin is not such an easy thing. You and your teammates found that `,
+		`three weird treasure boxes are moving. They are the guardians for the treasures`,
 		`How do you want to handle it?`
 	],
 
@@ -44,12 +44,10 @@ export const Chapter4: Chapter = {
 	],
 
 	rewards: {
-		experience: 5000,
-		equipment: [new Weapon("Ancient Wand", 5, 12), new Armor("Stone Armor", 12)],
-		newHero: [new Warrior("Jessica", GenderOptions.female, CampOptions.strengthCountry, 6, 38, {attack: 20, sneak: 14,
-				persuade: 12, intelligence: 8}, new Weapon("Power Sword", 6, 12), new Armor("Warrior Armor", 9)),
-				new Ranger("Iris", GenderOptions.female, CampOptions.dexterityCountry, 6, 32, {attack: 15, sneak: 21,
-				persuade: 7, intelligence: 12}, new Weapon("Double Bow", 7, 11), new Armor("Ranger Suit", 7))]
+		experience: 6000,
+		equipment: [new Weapon("Ancient Sword", 8, 13), new Weapon("Ancient Bow", 9, 12),
+			new Weapon("Ancient Sharp Knife", 6, 14), new Weapon("Ancient Wand", 8, 12)],
+		newHero: []
 
 	},
 
