@@ -1,6 +1,7 @@
 import { Chapter, CharacterAction, FailureOptions, SuccessOptions } from "../models/chapter";
 import { Weapon, Armor, Monster, Warrior, Ranger, Rogue, Priest } from '../models/characters';
 import { GenderOptions, CampOptions, ClassOptions } from "../models/character-options";
+import { Chapter5 } from './Chapter5';
 
 export const Chapter4: Chapter = {
 	story: [
@@ -51,6 +52,6 @@ export const Chapter4: Chapter = {
 
 	},
 
-	nextChapter: null   // if there's a Chapter 2, put Chapter 2
+	nextChapter: Chapter5   // if there's a Chapter 2, put Chapter 2
 };
 
