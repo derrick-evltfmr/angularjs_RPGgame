@@ -25,11 +25,11 @@ export const Chapter4: Chapter = {
 	],
 
 	enemyParty: [
-		new Monster("Treasure Monster (Red)", 60, {attack: 20, sneak: 20, persuade: 20}, {attack: 15, sneak: 15, persuade: 15}, 9, 14,
+		new Monster("Treasure Monster (Red)", 60, {attack: 20, sneak: 30, persuade: 30}, {attack: 15, sneak: 30, persuade: 30}, 9, 14,
 			"../../assets/redtreasuremon.png"),
-		new Monster("Treasure Monster (Black)", 50, {attack: 20, sneak: 20, persuade: 20}, {attack: 15, sneak: 15, persuade: 15}, 12, 18,
+		new Monster("Treasure Monster (Black)", 50, {attack: 20, sneak: 30, persuade: 30}, {attack: 15, sneak: 30, persuade: 30}, 12, 18,
 			"../../assets/blacktreasuremon.png"),
-		new Monster("Treasure Monster (Blue)", 60, {attack: 20, sneak: 20, persuade: 20}, {attack: 15, sneak: 15, persuade: 15}, 9, 14,
+		new Monster("Treasure Monster (Blue)", 60, {attack: 20, sneak: 30, persuade: 30}, {attack: 15, sneak: 30, persuade: 30}, 9, 14,
 			"../../assets/bluetreasuremon.png")
 							// (name, health, skills, barriers, minDamage, maxDamage, spriteUrl)
 	],
