@@ -45,7 +45,7 @@ export const Chapter4: Chapter = {
 	],
 
 	rewards: {
-		experience: 6000,
+		experience: 10000,
 		equipment: [new Weapon("Ancient Sword", 8, 13), new Weapon("Ancient Bow", 9, 12),
 			new Weapon("Ancient Sharp Knife", 6, 14), new Weapon("Ancient Wand", 8, 12)],
 		newHero: []

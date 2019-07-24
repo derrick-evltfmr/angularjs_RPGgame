@@ -21,12 +21,8 @@ export const Chapter5: Chapter = {
 	],
 
 	enemyParty: [
-		new Monster("Flower Mosnter", 7, {attack: 1, sneak: 2, persuade: 1}, {attack: 10, sneak: 10, persuade: 10}, 3, 7,
-			"../../assets/flowermonster.png"),
-					// (name, health, skills, barriers, minDamage, maxDamage, spriteUrl)
-		new Monster("Treeant", 15, {attack: 7, sneak: 5, persuade: 8}, {attack: 12, sneak: 12, persuade: 12}, 5, 12, "../../assets/treeant.png"),
-		new Monster("Mushroom Monster", 7, {attack: 1, sneak: 1, persuade: 2}, {attack: 10, sneak: 10, persuade: 10}, 3, 7,
-			"../../assets/mushroommonster.png")
+		new Monster("Dark Dragon", 100, {attack: 30, sneak: 30, persuade: 30}, {attack: 30, sneak: 30, persuade: 30}, 10, 25,
+			"../../assets/darkdragon.png")
 	],
 
 	sneakPersuadeFail: CharacterAction.attack,
@@ -40,7 +36,7 @@ export const Chapter5: Chapter = {
 	],
 
 	rewards: {
-		experience: 7000,
+		experience: 15000,
 		equipment: [new Weapon("Alloy Steel Sword", 5, 10), new Armor("Leather Armor", 8)],
 		newHero: [new Priest("Elizabeth", GenderOptions.female, CampOptions.wiseCountry, 5, 35, {attack: 10, sneak: 12,
 			persuade: 18, intelligence: 25}, new Weapon("Wand", 3, 10), new Armor("Elegant Clothes", 5))]
