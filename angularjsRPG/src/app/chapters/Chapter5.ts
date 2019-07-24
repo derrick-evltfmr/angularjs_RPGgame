@@ -4,13 +4,12 @@ import { GenderOptions, CampOptions, ClassOptions } from "../models/character-op
 
 export const Chapter5: Chapter = {
 	story: [
-		`A Rogue just passed by saw that how you fight with the goblin`,
-		`He rushed to the front of you and he's super interested in your style of fighting,`,
-		`He said his name was Sheen and said now he's your teammate and will go on adventure with you (Unilaterally)`,
-		`You don't know what to do with him, but it seems that he's a nice guy, and indeed you're very happy to have him with you.`,
-		`Meanwhile, the plants around you become a bit weird. You couldn't tell what's going wrong, `,
-		`but the astmosphere is really strange. Sheen finds that the plants are moving!!`,
-		`You realize that the flower, tree and mushroom in front of you guys are indeed living creatures, they are monster in the forest`,
+		`You defeated the treasure monsters, but it seems that the evil wizard has notice your existence`,
+		`So the ruin is starting to collapse, you and your teammates try to escape from the ruin`,
+		` `,
+		`You are almost at the entrance of the ruin, but suddenly a black hole appears at the entrance of the ruin`,
+		`All of you are shocked, because... a huge dark dragon was summoned...`,
+		`it seems that it won't let you to escape from the ruin...`,
 		`How do you want to handle it?`
 	],
 
@@ -21,7 +20,7 @@ export const Chapter5: Chapter = {
 	],
 
 	enemyParty: [
-		new Monster("Dark Dragon", 100, {attack: 30, sneak: 30, persuade: 30}, {attack: 30, sneak: 30, persuade: 30}, 10, 25,
+		new Monster("Dark Dragon", 100, {attack: 30, sneak: 50, persuade: 60}, {attack: 30, sneak: 50, persuade: 60}, 10, 25,
 			"../../assets/darkdragon.png")
 	],
 
