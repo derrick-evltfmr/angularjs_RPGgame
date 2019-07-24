@@ -8,11 +8,11 @@ export const Chapter4: Chapter = {
 		`You met Jessica and Iris during the fight with the brick monster and stone monster`,
 		`They are indeed skilled adventurers, but they are a bit timid when they meet the scary-looking monsters`,
 		`They thank that you helped them to defeat the monsters, so they say they can join into your team when you need them`,
-		` `,
+		`'`,
 		`You continue to explore the ruin, from the monsters you defeated just now, you can feel that the ruin `,
 		`has some relations with the evil wizard, because of the ominous magic power. `,
 		`You find a room that has many treasures, with some ancient weapons, which seem to be powerful`,
-		` `,
+		`'`,
 		`However, taking away the treasures from the ruin is not such an easy thing. You and your teammates found that `,
 		`three weird treasure boxes are moving. They are the guardians for the treasures`,
 		`How do you want to handle it?`

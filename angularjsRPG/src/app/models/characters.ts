@@ -153,7 +153,7 @@ export class Hero extends BaseCharacter {
 	levelUp(): void {
 		this.experience -= ExperienceToLevel[this.level];	// index, so [] not ()
 		this.level++;
-		this.availableSkillPoints += 5;
+		this.availableSkillPoints += 8;
 		if (this.experience >= ExperienceToLevel[this.level]) {
 			this.levelUp();
 		}
