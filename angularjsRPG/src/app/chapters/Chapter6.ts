@@ -1,9 +1,8 @@
 import { Chapter, CharacterAction, FailureOptions, SuccessOptions } from "../models/chapter";
 import { Weapon, Armor, Monster, Warrior, Ranger, Rogue, Priest } from '../models/characters';
 import { GenderOptions, CampOptions, ClassOptions } from "../models/character-options";
-import { Chapter6 } from './Chapter6';
 
-export const Chapter5: Chapter = {
+export const Chapter6: Chapter = {
 	story: [
 		`You defeated the treasure monsters, but it seems that the evil wizard has notice your existence`,
 		`So the ruin is starting to collapse, you and your teammates try to escape from the ruin`,
@@ -46,6 +45,6 @@ export const Chapter5: Chapter = {
 
 	},
 
-	nextChapter: Chapter6   // if there's a Chapter 2, put Chapter 2
+	nextChapter: null   // if there's a Chapter 2, put Chapter 2
 };
 
