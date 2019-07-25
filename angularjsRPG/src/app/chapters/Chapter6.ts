@@ -20,8 +20,13 @@ export const Chapter6: Chapter = {
 	],
 
 	enemyParty: [
-		new Monster("Dark Dragon", 120, {attack: 40, sneak: 100, persuade: 100}, {attack: 40, sneak: 100, persuade: 100}, 10, 25,
-			"../../assets/darkdragon.png")
+		new Monster("Skull Monster", 60, {attack: 30, sneak: 40, persuade: 40}, {attack: 30, sneak: 40, persuade: 40}, 12, 18,
+			"../../assets/skullmonster.png"),
+		new Monster("Dark Pumpkin", 100, {attack: 30, sneak: 40, persuade: 40}, {attack: 30, sneak: 40, persuade: 40}, 14, 25,
+			"../../assets/darkpumpkin.png"),
+		new Monster("Bat Monster", 60, {attack: 30, sneak: 40, persuade: 40}, {attack: 30, sneak: 40, persuade: 40}, 12, 18,
+			"../../assets/batmonster.png")
+							// (name, health, skills, barriers, minDamage, maxDamage, spriteUrl)
 	],
 
 	sneakPersuadeFail: CharacterAction.attack,

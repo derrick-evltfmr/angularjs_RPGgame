@@ -21,7 +21,7 @@ export const Chapter5: Chapter = {
 	],
 
 	enemyParty: [
-		new Monster("Dark Dragon", 120, {attack: 40, sneak: 100, persuade: 100}, {attack: 40, sneak: 100, persuade: 100}, 10, 25,
+		new Monster("Dark Dragon", 120, {attack: 40, sneak: 100, persuade: 100}, {attack: 40, sneak: 100, persuade: 100}, 15, 30,
 			"../../assets/darkdragon.png")
 	],
 
