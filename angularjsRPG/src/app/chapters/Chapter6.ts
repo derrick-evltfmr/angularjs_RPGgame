@@ -48,10 +48,10 @@ export const Chapter6: Chapter = {
 	rewards: {
 		experience: 18000,
 		equipment: [new Weapon("Evil breaker", 18, 30)],
-		newHero: [new Warrior("Benjamin", GenderOptions.male, CampOptions.dexterityCountry, 9, 95, {attack: 70, sneak: 40,
-			persuade: 25, intelligence: 10}, new Weapon("Fire Sword", 10, 15), new Armor("Knight Armor", 15)),
-				new Priest("John", GenderOptions.male, CampOptions.wiseCountry, 9, 80, {attack: 30, sneak: 20,
-			persuade: 50, intelligence: 80}, new Weapon("Spirit Wand", 12, 14), new Armor("Sage Suit", 10))
+		newHero: [new Ranger("Robin", GenderOptions.male, CampOptions.dexterityCountry, 10, 108, {attack: 75, sneak: 90,
+			persuade: 40, intelligence: 25}, new Weapon("Storm Spiral", 15, 24), new Armor("Wind protection suit", 15)),
+				new Rogue("Katherina", GenderOptions.female, CampOptions.agileCountry, 10, 102, {attack: 80, sneak: 82,
+			persuade: 30, intelligence: 30}, new Weapon("Ghost Daggers", 12, 22), new Armor("Skull hunter suit ", 14))
 		]
 
 	},
