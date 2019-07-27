@@ -1,9 +1,8 @@
 import { Chapter, CharacterAction, FailureOptions, SuccessOptions } from "../models/chapter";
 import { Weapon, Armor, Monster, Warrior, Ranger, Rogue, Priest } from '../models/characters';
 import { GenderOptions, CampOptions, ClassOptions } from "../models/character-options";
-import { Chapter7 } from './Chapter7';
 
-export const Chapter6: Chapter = {
+export const Chapter7: Chapter = {
 	story: [
 		`During the fight with the Dark Dragon, two guys appeared and gave you a hand`,
 		`With the help of Benjamin and John, you successfully defeated the Dark Dragon`,
@@ -57,6 +56,6 @@ export const Chapter6: Chapter = {
 
 	},
 
-	nextChapter: Chapter7   // if there's a Chapter 2, put Chapter 2
+	nextChapter: null   // if there's a Chapter 2, put Chapter 2
 };
 
