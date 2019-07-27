@@ -26,12 +26,12 @@ export const Chapter7: Chapter = {
 	],
 
 	enemyParty: [
-		new Monster("Skull Monster", 60, {attack: 30, sneak: 70, persuade: 70}, {attack: 30, sneak: 70, persuade: 70}, 12, 18,
-			"../../assets/skullmonster.png"),
-		new Monster("Dark Pumpkin", 100, {attack: 30, sneak: 70, persuade: 70}, {attack: 30, sneak: 70, persuade: 70}, 14, 25,
-			"../../assets/darkpumpkin.png"),
-		new Monster("Bat Monster", 60, {attack: 30, sneak: 70, persuade: 70}, {attack: 30, sneak: 70, persuade: 70}, 12, 18,
-			"../../assets/batmonster.png")
+		new Monster("Phantom Warrior", 75, {attack: 40, sneak: 99, persuade: 99}, {attack: 40, sneak: 99, persuade: 99}, 15, 20,
+			"../../assets/phantomwarrior.png"),
+		new Monster("Evil Wizard", 150, {attack: 50, sneak: 999, persuade: 999}, {attack: 50, sneak: 999, persuade: 999}, 25, 40,
+			"../../assets/evilwizard.png"),
+		new Monster("Wraith Devil", 75, {attack: 40, sneak: 99, persuade: 99}, {attack: 40, sneak: 99, persuade: 99}, 15, 20,
+			"../../assets/wraithdevil.png")
 							// (name, health, skills, barriers, minDamage, maxDamage, spriteUrl)
 	],
 
@@ -46,13 +46,9 @@ export const Chapter7: Chapter = {
 	],
 
 	rewards: {
-		experience: 18000,
-		equipment: [new Weapon("Evil breaker", 18, 30)],
-		newHero: [new Ranger("Robin", GenderOptions.male, CampOptions.dexterityCountry, 10, 108, {attack: 75, sneak: 90,
-			persuade: 40, intelligence: 25}, new Weapon("Storm Spiral", 15, 24), new Armor("Wind protection suit", 15)),
-				new Rogue("Katherina", GenderOptions.female, CampOptions.agileCountry, 10, 102, {attack: 80, sneak: 82,
-			persuade: 30, intelligence: 30}, new Weapon("Ghost Daggers", 12, 22), new Armor("Skull hunter suit ", 14))
-		]
+		experience: 99999,
+		equipment: [],
+		newHero: []
 
 	},
 
