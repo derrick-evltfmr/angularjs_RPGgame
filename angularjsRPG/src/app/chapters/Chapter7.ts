@@ -4,18 +4,12 @@ import { GenderOptions, CampOptions, ClassOptions } from "../models/character-op
 
 export const Chapter7: Chapter = {
 	story: [
-		`During the fight with the Dark Dragon, two guys appeared and gave you a hand`,
-		`With the help of Benjamin and John, you successfully defeated the Dark Dragon`,
-		`You leave the ruin in time, after you all get out, the ruin collapses `,
+		`Finally, you came to the depths of the castle, where the darkest power is the strongest.`,
 		`'`,
-		`You say 'Thanks' to them, they said they are just two random bravers that passing by`,
-		`But they are very interested to join the fight against the evil wizard, so they are now your new teammates`,
+		`"Hahahahahhh... You are really something else! I didn't even expect you can still stay alive and come here." `,
+		`"However, this helps nothing, because you are all dying here."`,
 		`'`,
-		`Your party goes through the magic river and comes to a valley, you can feel there are some very strong magic power in the deep inside`,
-		`Everything around becomes darker and darker. And finally you reach a castle.`,
-		`From the dark energy, you can tell the evil wizard must be inside the castle, but your party is not the first that arrives here`,
-		`Inside there are two people's shadows fighting with the monster, but there is a great quantity of the enemies`,
-		`You want to help, and at this time, three monsters are rushing to your side.`,
+		`The final boss Evil Wizard appears.`,
 		`How do you want to handle it?`
 	],
 
