@@ -1,6 +1,7 @@
 import { Chapter, CharacterAction, FailureOptions, SuccessOptions } from "../models/chapter";
 import { Weapon, Armor, Monster, Warrior, Ranger, Rogue, Priest } from '../models/characters';
 import { GenderOptions, CampOptions, ClassOptions } from "../models/character-options";
+import { Ending } from './Ending';
 
 export const Chapter7: Chapter = {
 	story: [
@@ -46,6 +47,6 @@ export const Chapter7: Chapter = {
 
 	},
 
-	nextChapter: null   // if there's a Chapter 2, put Chapter 2
+	nextChapter: Ending  // if there's a Chapter 2, put Chapter 2
 };
 
